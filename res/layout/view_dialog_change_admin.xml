@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/shape_alertdialog"
+    android:orientation="vertical"
+    android:paddingBottom="15dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp" >
+
+    <TextView
+        android:id="@+id/view_dialog_change_admin_unwrap_title"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@null"
+        android:gravity="center"
+        android:text="@string/you_admin_and_you_can"
+        android:textColor="@color/color_8"
+        android:textSize="@dimen/textstyle_title" />
+
+    <Button
+        android:id="@+id/view_dialog_change_admin_unwrap_alone"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/view_dialog_change_admin_unwrap_title"
+        android:background="@drawable/selector_button_bg_gray_white"
+        android:gravity="center"
+        android:text="@string/remove_myself"
+        android:textColor="@color/color_6"
+        android:textSize="@dimen/textstyle_content" />
+
+    <Button
+        android:id="@+id/view_dialog_change_admin_unwrap_all"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/view_dialog_change_admin_unwrap_alone"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/selector_button_bg_gray_white"
+        android:gravity="center"
+        android:text="@string/remove_all"
+        android:textColor="@color/color_6"
+        android:textSize="@dimen/textstyle_content" />
+
+    <Button
+        android:id="@+id/view_dialog_change_admin_no"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/view_dialog_change_admin_unwrap_all"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/selector_view_bg_color"
+        android:gravity="center"
+        android:text="@string/dialog_negative"
+        android:textColor="@color/color_6"
+        android:textSize="@dimen/textstyle_content" />
+
+</RelativeLayout>

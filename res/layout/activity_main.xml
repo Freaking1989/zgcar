@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:gravity="bottom"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/color_10" >
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/color_9" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_radio_group_height" >
+
+        <RadioGroup
+            android:id="@+id/main_radiogroup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/tab_bg"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/radio_button1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/color_11"
+                android:button="@null"
+                android:checked="true"
+                android:drawablePadding="2dp"
+                android:gravity="center"
+                android:paddingBottom="-105dp"
+                android:paddingTop="5dp"
+                android:text="@string/home_desc"
+                android:textColor="@drawable/selector_radio_button_textcolor"
+                android:textSize="@dimen/textstyle_content" />
+
+            <RadioButton
+                android:id="@+id/radio_button2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/color_11"
+                android:button="@null"
+                android:checked="false"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:text="@string/fragment_statistics"
+                android:textColor="@drawable/selector_radio_button_textcolor"
+                android:textSize="@dimen/textstyle_content" />
+
+            <RadioButton
+                android:id="@+id/radio_button3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/color_11"
+                android:button="@null"
+                android:checked="false"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:text="@string/interest"
+                android:textColor="@drawable/selector_radio_button_textcolor"
+                android:textSize="@dimen/textstyle_content" />
+
+            <RadioButton
+                android:id="@+id/radio_button4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/color_11"
+                android:button="@null"
+                android:checked="false"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:text="@string/account"
+                android:textColor="@drawable/selector_radio_button_textcolor"
+                android:textSize="@dimen/textstyle_content" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/main_has_voice_info"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginRight="55555555550dp"
+            android:background="@drawable/chat_icon_reddot"
+            android:gravity="center"
+            android:text=""
+            android:textSize="@dimen/textstyle_desc"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+</LinearLayout>

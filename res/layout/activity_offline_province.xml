@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_title_height" >
+
+        <TextView
+            android:id="@+id/account_offline_province_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_4"
+            android:gravity="center"
+            android:text="@string/map"
+            android:textColor="@color/color_11"
+            android:textSize="@dimen/textstyle_title" />
+
+        <ImageButton
+            android:id="@+id/account_offline_province_back"
+            android:layout_width="@dimen/app_back_width"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:contentDescription="@string/welecome_string"
+            android:padding="13dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/selector_back_img_ib" />
+    </RelativeLayout>
+
+    <ExpandableListView
+        android:id="@+id/account_offline_province_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_10"
+        android:cacheColorHint="#00000000"
+        android:childDivider="@color/color_10"
+        android:divider="@color/color_9"
+        android:dividerHeight="1dip"
+        android:listSelector="#00000000"
+        android:scrollbars="none" />
+
+</LinearLayout>

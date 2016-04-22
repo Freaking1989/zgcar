@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.zgcar.com"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_10"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_title_height" >
+
+        <TextView
+            android:id="@+id/family_basics_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_4"
+            android:gravity="center"
+            android:text="@string/details_of_others"
+            android:textColor="@color/color_11"
+            android:textSize="@dimen/textstyle_title" />
+
+        <ImageButton
+            android:id="@+id/family_basics_back"
+            android:layout_width="@dimen/app_back_width"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:contentDescription="@string/welecome_string"
+            android:padding="13dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/selector_back_img_ib" />
+
+        <Button
+            android:id="@+id/family_basics_save"
+            android:layout_width="@dimen/app_back_width"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:text="@string/save"
+            android:textColor="@drawable/selector_save_textcolor"
+            android:textSize="@dimen/textstyle_content" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/color_10"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <com.zgcar.com.util.CircleImageView
+            android:id="@+id/family_basics_icon"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/icon"
+            app:border_color="@color/color_9"
+            app:border_width="@dimen/circle_image_view_width" />
+
+        <ImageButton
+            android:id="@+id/family_basics_camera"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignBottom="@+id/family_basics_icon"
+            android:layout_alignRight="@+id/family_basics_icon"
+            android:background="@drawable/selector_account_icon_camera"
+            android:contentDescription="@string/app_name" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/family_basics_nick_name"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/selector_fragment_account_basics"
+            android:baselineAligned="false"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:text="@string/baby_nick_name"
+                android:textColor="@color/color_6"
+                android:textSize="@dimen/textstyle_content" />
+
+            <TextView
+                android:id="@+id/family_basics_nick_name_tv"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical|right"
+                android:text=""
+                android:textColor="@color/color_6"
+                android:textSize="@dimen/textstyle_content" />
+
+            <ImageView
+                android:layout_width="55dp"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/xiaohong"
+                android:padding="13dp"
+                android:src="@drawable/account_icon_arrow_right" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/color_9" />
+
+        <LinearLayout
+            android:id="@+id/family_basics_relation"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/selector_fragment_account_basics"
+            android:baselineAligned="false"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/family_basics_relation_tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:text=""
+                android:textColor="@color/color_6"
+                android:textSize="@dimen/textstyle_content" />
+
+            <TextView
+                android:id="@+id/family_basics_relation_tv2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical|right"
+                android:text=""
+                android:textColor="@color/color_6"
+                android:textSize="@dimen/textstyle_content" />
+
+            <ImageView
+                android:layout_width="55dp"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/xiaohong"
+                android:padding="13dp"
+                android:src="@drawable/account_icon_arrow_right" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/color_9" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/color_9"
+            android:baselineAligned="false"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:text="@string/telphone_num_desc"
+                android:textColor="@color/color_6"
+                android:textSize="@dimen/textstyle_content" />
+
+            <TextView
+                android:id="@+id/family_basics_phone_num_tv"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical|right"
+                android:paddingRight="55dp"
+                android:text=""
+                android:textColor="@color/color_6"
+                android:textSize="@dimen/textstyle_content" />
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/family_member_family_number"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:background="@null"
+            android:checked="true"
+            android:text="@string/as_the_family_number"
+            android:textColor="@color/color_6"
+            android:textSize="@dimen/textstyle_title"
+            android:visibility="gone" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent" />
+
+        <Button
+            android:id="@+id/family_basics_remove_family"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/selector_fragment_account_basics"
+            android:baselineAligned="false"
+            android:gravity="center"
+            android:text="@string/remove_from_family"
+            android:textColor="@color/color_12"
+            android:textSize="@dimen/textstyle_content" >
+        </Button>
+    </LinearLayout>
+
+</LinearLayout>

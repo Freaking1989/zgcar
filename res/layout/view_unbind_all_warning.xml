@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_alertdialog"
+    android:paddingTop="15dp" >
+
+    <TextView
+        android:id="@+id/view_unbind_warning_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="@string/unbind_all_warning_title"
+        android:textColor="@color/color_4"
+        android:textSize="@dimen/textstyle_title" />
+
+    <TextView
+        android:id="@+id/view_unbind_warning_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view_unbind_warning_title"
+        android:paddingBottom="8dp"
+        android:paddingLeft="35dp"
+        android:paddingRight="35dp"
+        android:paddingTop="3dp"
+        android:text="@string/unbind_all_warning_desc"
+        android:textColor="@color/color_6"
+        android:textSize="@dimen/textstyle_content" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@id/view_unbind_warning_desc"
+        android:background="@color/color_9" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@id/view_unbind_warning_desc"
+        android:layout_marginTop="1px"
+        android:background="@null"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/view_unbind_warning_negative"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:text="@string/dialog_negative"
+            android:textColor="@drawable/selector_view_dialog_textcolor"
+            android:textSize="@dimen/textstyle_content" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="@color/color_9" />
+
+        <Button
+            android:id="@+id/view_unbind_warning_positive"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:text="@string/dialog_positive"
+            android:textColor="@drawable/selector_view_dialog_textcolor"
+            android:textSize="@dimen/textstyle_content" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_10"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_title_height" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_4"
+            android:gravity="center"
+            android:text="@string/set_zone"
+            android:textColor="@color/color_11"
+            android:textSize="@dimen/textstyle_title" />
+
+        <ImageButton
+            android:id="@+id/set_time_zone_back"
+            android:layout_width="@dimen/app_back_width"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:contentDescription="@string/welecome_string"
+            android:padding="13dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/selector_back_img_ib" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_11"
+        android:orientation="horizontal" >
+
+        <com.zgcar.com.wheelview.WheelView
+            android:id="@+id/set_time_zone_wheelView1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <com.zgcar.com.wheelview.WheelView
+            android:id="@+id/set_time_zone_wheelView2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <com.zgcar.com.wheelview.WheelView
+            android:id="@+id/set_time_zone_wheelView3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <com.zgcar.com.wheelview.WheelView
+            android:id="@+id/set_time_zone_wheelView4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/set_time_zone_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/selector_next_button"
+        android:text="@string/dialog_positive"
+        android:textColor="@drawable/selector_next_color"
+        android:textSize="@dimen/textstyle_content" />
+
+</LinearLayout>

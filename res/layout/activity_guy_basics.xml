@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.zgcar.com"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_10"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_title_height" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_4"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/color_11"
+            android:textSize="@dimen/textstyle_title" />
+
+        <ImageButton
+            android:id="@+id/guy_basics_back"
+            android:layout_width="@dimen/app_back_width"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:contentDescription="@string/welecome_string"
+            android:padding="13dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/selector_back_img_ib" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        android:background="@color/color_10"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <com.zgcar.com.util.CircleImageView
+            android:id="@+id/guy_basics_icon"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/icon"
+            app:border_color="@color/color_9"
+            app:border_width="@dimen/circle_image_view_width" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/selector_fragment_account_basics"
+            android:baselineAligned="false"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:text="@string/baby_nick_name"
+                android:textColor="@color/color_6"
+                android:textSize="@dimen/textstyle_content" />
+
+            <TextView
+                android:id="@+id/guy_basics_name_tv"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:gravity="center_vertical|right"
+                android:text=""
+                android:textColor="@color/color_6"
+                android:textSize="@dimen/textstyle_content" />
+
+            <ImageView
+                android:layout_width="55dp"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/xiaohong"
+                android:padding="13dp"
+                android:src="@drawable/account_icon_arrow_right" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/color_9" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/selector_fragment_account_basics"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:text="@string/sex"
+                android:textColor="@color/color_6"
+                android:textSize="@dimen/textstyle_content" />
+
+            <TextView
+                android:id="@+id/guy_basics_sex_tv"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:background="@null"
+                android:gravity="right|center_vertical"
+                android:text="@string/man"
+                android:textColor="@color/color_6"
+                android:textSize="@dimen/textstyle_content" />
+
+            <ImageView
+                android:layout_width="55dp"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/xiaohong"
+                android:padding="13dp"
+                android:src="@drawable/account_icon_arrow_right" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/color_9" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/selector_fragment_account_basics"
+            android:baselineAligned="false"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:text="@string/baby_age"
+                android:textColor="@color/color_6"
+                android:textSize="@dimen/textstyle_content" />
+
+            <TextView
+                android:id="@+id/guy_basics_age_tv"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:gravity="center_vertical|right"
+                android:text=""
+                android:textColor="@color/color_6"
+                android:textSize="@dimen/textstyle_content" />
+
+            <ImageView
+                android:layout_width="55dp"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/xiaohong"
+                android:padding="13dp"
+                android:src="@drawable/account_icon_arrow_right" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/guy_basics_delete_guy"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/selector_delete_button"
+            android:baselineAligned="false"
+            android:gravity="center"
+            android:text="@string/delete_guy"
+            android:textColor="@drawable/selector_delete_textcolor"
+            android:textSize="@dimen/textstyle_content" >
+        </Button>
+    </LinearLayout>
+
+</LinearLayout>

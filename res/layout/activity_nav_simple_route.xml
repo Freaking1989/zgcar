@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_title_height" >
+
+        <TextView
+            android:id="@+id/nav_simple_route_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_4"
+            android:gravity="center"
+            android:text="@string/suggest"
+            android:textColor="@color/color_11"
+            android:textSize="@dimen/textstyle_title" />
+
+        <ImageButton
+            android:id="@+id/nav_simple_route_back"
+            android:layout_width="@dimen/app_back_width"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:contentDescription="@string/welecome_string"
+            android:padding="13dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/selector_back_img_ib" />
+    </RelativeLayout>
+
+    <!-- com.amap.api.maps.MapView -->
+
+    <WebView
+        android:id="@+id/nav_route_webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <com.amap.api.navi.AMapNaviView
+        android:id="@+id/simplenavimap1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+</LinearLayout>

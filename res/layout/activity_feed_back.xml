@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_10"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_title_height" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_4"
+            android:gravity="center"
+            android:text="@string/suggest"
+            android:textColor="@color/color_11"
+            android:textSize="@dimen/textstyle_title" />
+
+        <ImageButton
+            android:id="@+id/feed_back_ib"
+            android:layout_width="@dimen/app_back_width"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:contentDescription="@string/welecome_string"
+            android:padding="13dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/selector_back_img_ib" />
+    </RelativeLayout>
+
+
+        <EditText
+            android:id="@+id/feed_back_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="@dimen/left_margin"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_weight="0.5"
+            android:background="@drawable/selector_feedback_edittext"
+            android:gravity="top"
+            android:hint=""
+            android:maxLength="300"
+            android:paddingBottom="15dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="15dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/color_8"
+            android:textSize="@dimen/textstyle_content" />
+
+
+            <Button
+                android:id="@+id/feed_back_submit"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/selector_next_button"
+                android:text="@string/sure_handle"
+                android:textColor="@drawable/selector_next_color"
+                android:textSize="@dimen/textstyle_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="@string/_400_0518_068_"
+                android:textColor="@color/color_8"
+                android:textSize="@dimen/textstyle_content" />
+
+</LinearLayout>

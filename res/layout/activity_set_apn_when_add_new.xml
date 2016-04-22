@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_10"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_title_height"
+        android:background="@color/color_4"
+        android:gravity="center"
+        android:text="@string/set_apn_title_desc"
+        android:textColor="@color/color_11"
+        android:textSize="@dimen/textstyle_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/shape_loading_edittext"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="center"
+            android:text="@string/apn"
+            android:textColor="@color/color_6"
+            android:textSize="@dimen/textstyle_content" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/color_9" />
+
+        <EditText
+            android:id="@+id/set_apn_when_add_new_apn_et"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="1dp"
+            android:layout_weight="3"
+            android:background="@null"
+            android:baselineAligned="true"
+            android:cursorVisible="true"
+            android:gravity="center_vertical"
+            android:hint="@string/username_desc"
+            android:inputType="textVisiblePassword"
+            android:paddingLeft="10dp"
+            android:paddingRight="5dp"
+            android:singleLine="true"
+            android:textColor="@color/color_6"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/textstyle_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_loading_edittext"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="center"
+            android:text="@string/username"
+            android:textColor="@color/color_6"
+            android:textSize="@dimen/textstyle_content" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/color_9" />
+
+        <EditText
+            android:id="@+id/set_apn_when_add_new_name_et"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="1dp"
+            android:layout_weight="3"
+            android:background="@null"
+            android:baselineAligned="true"
+            android:cursorVisible="true"
+            android:gravity="center_vertical"
+            android:hint="@string/apn_desc"
+            android:inputType="textVisiblePassword"
+            android:paddingLeft="10dp"
+            android:paddingRight="5dp"
+            android:singleLine="true"
+            android:textColor="@color/color_6"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/textstyle_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_loading_edittext"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="center"
+            android:text="@string/password"
+            android:textColor="@color/color_6"
+            android:textSize="@dimen/textstyle_content" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/color_9" />
+
+        <EditText
+            android:id="@+id/set_apn_when_add_new_psw_et"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="1dp"
+            android:layout_weight="3"
+            android:background="@null"
+            android:baselineAligned="true"
+            android:cursorVisible="true"
+            android:gravity="center_vertical"
+            android:hint="@string/password_desc"
+            android:inputType="textVisiblePassword"
+            android:paddingLeft="10dp"
+            android:paddingRight="5dp"
+            android:singleLine="true"
+            android:textColor="@color/color_6"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/textstyle_content" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/set_apn_when_add_new_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/selector_next_button"
+        android:text="@string/dialog_positive"
+        android:textColor="@drawable/selector_next_color"
+        android:textSize="@dimen/textstyle_content" />
+
+</LinearLayout>

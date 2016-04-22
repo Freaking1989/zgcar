@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/online_user_list_item_textview"
+    android:layout_width="match_parent"
+    android:layout_height="35dp"
+    android:layout_marginBottom="20dip"
+    android:layout_marginTop="20dip"
+    android:background="@color/color_10"
+    android:gravity="center_vertical"
+    android:paddingLeft="10dp"
+    android:textColor="@color/color_6"
+    android:textSize="@dimen/textstyle_content" >
+
+</TextView>

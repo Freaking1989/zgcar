@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.zgcar.com"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_10"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <WebView
+            android:id="@+id/fragment_location_web_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+        <com.amap.api.maps.MapView
+            android:id="@+id/fragment_location_map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" >
+        </com.amap.api.maps.MapView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:background="@null"
+            android:baselineAligned="false" >
+
+            <RelativeLayout
+                android:id="@+id/fragment_location_top_title_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/app_title_height"
+                android:layout_marginBottom="25dp"
+                android:background="@color/color_4"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/fragment_location_watch_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/color_11"
+                    android:textSize="@dimen/textstyle_title" />
+
+                <ImageButton
+                    android:id="@+id/fragment_location_history_imagebutton"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@null"
+                    android:contentDescription="@string/xiaohong"
+                    android:padding="8dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/title_icon_historicalroute" />
+            </RelativeLayout>
+
+            <com.zgcar.com.util.CircleImageView
+                android:id="@+id/fragment_location_watch_icon"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/icon"
+                app:border_color="@color/color_9"
+                app:border_width="@dimen/circle_image_view_width" />
+        </RelativeLayout>
+        <!-- 导航 S -->
+
+        <LinearLayout
+            android:id="@+id/fragment_location_navigation"
+            android:layout_width="120dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:background="@color/search"
+            android:clickable="true"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <ImageButton
+                android:id="@+id/fragment_location_navigation_drive"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/more_noral" />
+
+            <ImageButton
+                android:id="@+id/fragment_location_navigation_walk"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/walking_noral" />
+        </LinearLayout>
+
+        <!-- 导航E -->
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="50dp"
+            android:orientation="vertical"
+            android:paddingTop="5dp" >
+
+            <RelativeLayout
+                android:id="@+id/fragment_location_phone_location"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
+                android:background="@drawable/selector_press_oval_gray_and_blue"
+                android:gravity="center_vertical|center_horizontal" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fragment_location_my_icon"
+                    android:gravity="center"
+                    android:text="@string/me"
+                    android:textColor="@color/color_6"
+                    android:textSize="@dimen/textstyle_desc" />
+
+                <com.zgcar.com.util.CircleImageView
+                    android:id="@+id/fragment_location_my_icon"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/current_location"
+                    app:border_color="@color/color_9"
+                    app:border_width="@dimen/circle_image_view_width" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/fragment_location_locate_watch_place"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/selector_press_oval_gray_and_blue"
+                android:gravity="center" >
+
+                <ImageView
+                    android:id="@+id/fragment_location_image2"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:contentDescription="@string/app_name"
+                    android:padding="3dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/locate_icon_location" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fragment_location_image2"
+                    android:gravity="center"
+                    android:text="@string/location"
+                    android:textColor="@color/color_6"
+                    android:textSize="@dimen/textstyle_desc" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/fragment_location_record_voice"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/selector_press_oval_gray_and_blue"
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/fragment_location_image3"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:contentDescription="@string/app_name"
+                    android:padding="3dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/locate_icon_record" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fragment_location_image3"
+                    android:gravity="center"
+                    android:text="@string/luyin"
+                    android:textColor="@color/color_6"
+                    android:textSize="@dimen/textstyle_desc" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/fragment_location_call_watch"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/selector_press_oval_gray_and_blue"
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/fragment_location_image4"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:contentDescription="@string/app_name"
+                    android:padding="3dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/locate_icon_call" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fragment_location_image4"
+                    android:gravity="center"
+                    android:text="@string/hujiao"
+                    android:textColor="@color/color_6"
+                    android:textSize="@dimen/textstyle_desc" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/fragment_location_monitoring"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/selector_press_oval_gray_and_blue"
+                android:clickable="true"
+                android:gravity="center" >
+
+                <ImageView
+                    android:id="@+id/fragment_location_image5"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:contentDescription="@string/app_name"
+                    android:padding="3dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/locate_icon_monitor" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fragment_location_image5"
+                    android:gravity="center"
+                    android:text="@string/monitor"
+                    android:textColor="@color/color_6"
+                    android:textSize="@dimen/textstyle_desc" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="80dp"
+            android:orientation="vertical" >
+
+            <ImageButton
+                android:id="@+id/fragment_location_layers_model_ib"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@null"
+                android:contentDescription="@string/app_name"
+                android:padding="3dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/location_map_model1" />
+
+            <TextView
+                android:id="@+id/fragment_location_layers_model_desc_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/color_6"
+                android:textSize="@dimen/textstyle_desc"
+                android:textStyle="bold"
+                android:typeface="monospace" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="@dimen/left_margin"
+            android:layout_marginLeft="@dimen/left_margin"
+            android:orientation="vertical"
+            android:padding="2dp" >
+
+            <Button
+                android:id="@+id/fragment_location_narrow_map"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@drawable/selector_location_linear_button"
+                android:text="@string/enlarge"
+                android:textColor="@color/color_6"
+                android:textSize="@dimen/textstyle_content" />
+
+            <Button
+                android:id="@+id/fragment_location_magnify_map"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@drawable/selector_location_linear_buttons"
+                android:text="@string/shrink"
+                android:textColor="@color/color_6"
+                android:textSize="@dimen/textstyle_content" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/color_11"
+        android:gravity="center"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp" >
+
+        <Button
+            android:id="@+id/fragment_location_go_watch_place"
+            android:layout_width="65dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/selector_press_round_rectangle_gray_and_blue"
+            android:gravity="center"
+            android:text="@string/go_here"
+            android:textColor="@drawable/selector_textcolor_pressed_location"
+            android:textSize="@dimen/textstyle_desc" />
+
+        <LinearLayout
+            android:id="@+id/fragment_location_linearlayout"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_toLeftOf="@+id/fragment_location_go_watch_place"
+            android:orientation="horizontal"
+            android:paddingLeft="15dp" >
+
+            <com.zgcar.com.util.MyTextView
+                android:id="@+id/fragment_location_watch_locate_time"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center_vertical"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/color_6"
+                android:textSize="@dimen/textstyle_content" />
+
+            <Button
+                android:id="@+id/fragment_location_watch_locate_model"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selector_press_round_rectangle_gray_and_blue"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/color_6"
+                android:textSize="@dimen/textstyle_content" />
+        </LinearLayout>
+
+        <com.zgcar.com.util.MyTextView
+            android:id="@+id/fragment_location_watch_locate_address"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@+id/fragment_location_linearlayout"
+            android:layout_marginLeft="15dp"
+            android:layout_toLeftOf="@+id/fragment_location_go_watch_place"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center_vertical"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+            android:textColor="@color/color_6"
+            android:textSize="@dimen/textstyle_content" />
+    </RelativeLayout>
+
+</LinearLayout>

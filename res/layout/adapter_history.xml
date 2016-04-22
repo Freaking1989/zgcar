@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linobserve"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/selector_press_round_rectangle_gray_and_blue"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <ImageView
+        android:id="@+id/tp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/xiaotu"
+        android:contentDescription="@string/xiaohong"
+        android:gravity="center" />
+
+    <!-- 日期事件 -->
+
+    <LinearLayout
+        android:id="@+id/riqi"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/color_4"
+        android:baselineAligned="false"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/color_11"
+            android:textSize="@dimen/textstyle_content" />
+
+        <TextView
+            android:id="@+id/xiangqin"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="9dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/xiangqing"
+            android:textColor="@color/color_11"
+            android:textSize="@dimen/textstyle_content" />
+    </LinearLayout>
+
+</LinearLayout>

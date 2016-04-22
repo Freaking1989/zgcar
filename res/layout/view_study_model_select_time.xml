@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_10" >
+
+    <LinearLayout
+        android:id="@+id/view_study_model_select_time_linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_10"
+        android:orientation="horizontal" >
+
+        <com.zgcar.com.wheelview.WheelView
+            android:id="@+id/view_study_model_select_time_wheelview1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+        </com.zgcar.com.wheelview.WheelView>
+
+        <com.zgcar.com.wheelview.WheelView
+            android:id="@+id/view_study_model_select_time_wheelview2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+        </com.zgcar.com.wheelview.WheelView>
+
+        <com.zgcar.com.wheelview.WheelView
+            android:id="@+id/view_study_model_select_time_wheelview3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+        </com.zgcar.com.wheelview.WheelView>
+
+        <com.zgcar.com.wheelview.WheelView
+            android:id="@+id/view_study_model_select_time_wheelview4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+        </com.zgcar.com.wheelview.WheelView>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@id/view_study_model_select_time_linearlayout"
+        android:background="@color/color_9" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@id/view_study_model_select_time_linearlayout"
+        android:layout_marginTop="1px"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/view_study_model_select_time_cancel_bt"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:text="@string/cancel_desc"
+            android:textColor="@drawable/selector_textcolor_pressed_location"
+            android:textSize="@dimen/textstyle_content" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="@color/color_9" />
+
+        <Button
+            android:id="@+id/view_study_model_select_time_confirm_bt"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:text="@string/dialog_positive"
+            android:textColor="@drawable/selector_textcolor_pressed_location"
+            android:textSize="@dimen/textstyle_content" />
+    </LinearLayout>
+
+</RelativeLayout>

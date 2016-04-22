@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_10"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_title_height"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_4"
+            android:gravity="center"
+            android:text="@string/wearing_habits"
+            android:textColor="@color/color_11"
+            android:textSize="@dimen/textstyle_title" />
+
+        <ImageButton
+            android:id="@+id/wearing_habits_back"
+            android:layout_width="@dimen/app_back_width"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:contentDescription="@string/welecome_string"
+            android:padding="13dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/selector_back_img_ib" />
+    </RelativeLayout>
+
+    <CheckBox
+        android:id="@+id/wearing_habits_left"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/selector_fragment_account_button"
+        android:button="@null"
+        android:checked="false"
+        android:drawableRight="@drawable/selector_check_box"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="@string/left_hand"
+        android:textColor="@color/color_6"
+        android:textSize="@dimen/textstyle_content" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/color_9" />
+
+    <CheckBox
+        android:id="@+id/wearing_habits_right"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/selector_fragment_account_button"
+        android:button="@null"
+        android:checked="true"
+        android:drawableRight="@drawable/selector_check_box"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="@string/right_hand"
+        android:textColor="@color/color_6"
+        android:textSize="@dimen/textstyle_content" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="25dp"
+        android:background="@null"
+        android:gravity="center"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text=""
+        android:textColor="@color/color_8"
+        android:textSize="@dimen/textstyle_desc" />
+
+</LinearLayout>

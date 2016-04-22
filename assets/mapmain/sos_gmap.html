@@ -1,0 +1,313 @@
+
+<html xmlns='http://www.w3.org/1999/xhtml' xmlns:v='urn:schemas-microsoft-com:vml'>
+<head>
+<meta http-equiv='content-type' content='text/html; charset=utf-8'/>
+<title></title>
+<style type='text/css'>
+.icon{left:0px;top:0px;border:0;padding:0;margin:0;position:absolute;}
+.label{border:1px solid #cc7600;padding:0 3 0 3;left:28px;top:8px;position:absolute;color:#333333;background-color:#fffebe;font-size:12px;text-align:left;}
+</style>
+<script type='text/javascript'>
+function _Get(id) { return document.getElementById(id); }
+function _SetT(id, t) { _Get(id).innerText = t; }
+function _SetH(id, h) { _Get(id).innerHTML = h; }
+function _SetClass(id, c) { _Get(id).className = c; }
+function _Hide(id) { _Get(id).style.display = 'none'; }
+function _Show(id) { _Get(id).style.display = ''; }
+function _Goto(url) { window.location.href = url; }
+function _Open(url) { window.open(url, '_blank'); }
+function _Out(html) { document.write(html); }
+
+var map = null;
+var geocoder = null;
+var findMarker;
+var lowVer = 0;
+function _RSE_Map() {_Show('divReload');map = null;return true;}
+function _RSE_Act() {var msg='';for(var i=0;i<arguments.length;i++){msg+='\n'+(i+1)+'锛�'+arguments[i];}alert(msg);return true;}
+
+var S1 = '|', S2 = '^', S3 = '$';
+
+//鍥炬爣璺緞銆侀粯璁ゆ瘮渚嬨�侀粯璁ょ粡搴︺�侀粯璁ょ含搴︺�佹甯哥嚎鏉￠鑹层�佽秴閫熺嚎鏉￠鑹层�佹姤璀︾嚎鏉￠鑹层�佺嚎鏉″搴�
+var _PATH = 'images\\map\\';
+var _MAP_Lv = 4;
+var _MAP_Lo = 108.569281;
+var _MAP_La = 36.668265;
+var _pn='#0000FF',_ps='#FF8C00',_pa='#FF0000',_pl=3;
+//杞ㄨ抗璧风偣銆佽建杩圭粨鏉熴�佸湴鍥鹃敊璇�侀噸鏂拌浇鍏ュ湴鍥俱�佺増鏈繃浣�
+var _LINE_S = '杞ㄨ抗寮�濮�';
+var _LINE_E = '杞ㄨ抗缁撴潫';
+var _ERR_m1 = '鍦板浘杞藉叆澶辫触';
+var _ERR_m2 = '閲嶆柊杞藉叆';
+
+function Init() {
+  var b_version = navigator.appVersion
+  var version = b_version.split(';');
+  var trim_Version = version[1].replace(/[ ]/g, '');
+  if(trim_Version == 'MSIE6.0' || trim_Version == 'MSIE5.5' || trim_Version == 'MSIE5.0'){lowVer=1;}
+}
+Init();
+window.onerror = _RSE_Map;
+</script>
+</head>
+<body style='margin:0px;padding:0px;width:100%;height:100%;font-size:12px;overflow:hidden;'>
+<div id='divReload' style='width:100%;height:100%;font-size:14px;display:none;'>
+ <p style='position:absolute;top:50%;left:50%;width:400px;height:30px;margin:-15px 0 0 -200px;text-align:center;'>
+ <script type='text/javascript'>_Out(_ERR_m1);</script>,
+ <a href='javascript:window.external.MapRefresh();'><script type='text/javascript'>_Out(_ERR_m2);</script></a></p>
+</div>
+<div id='divMap' style='width:100%;height:100%;'></div>
+</body>
+<script type='text/javascript' src='http://ditu.google.cn/maps/api/js?sensor=false&region=CN&language=en'></script>
+<script type='text/javascript'>
+var _PO_N = { strokeColor: _pn, strokeOpacity: 1.0, strokeWeight: _pl };
+var _PO_S = { strokeColor: _ps, strokeOpacity: 1.0, strokeWeight: _pl };
+var _PO_A = { strokeColor: _pa, strokeOpacity: 1.0, strokeWeight: _pl };
+/////////////////////////地图更换/////////////////////////
+var minLo = 0, maxLo = 0, minLa = 0, maxLa = 0, cenLo = 0, cenLa = 0;
+function InitMap() {
+  var myOptions = {
+    zoom:_MAP_Lv-0,
+    center: new google.maps.LatLng(_MAP_La, _MAP_Lo),
+    mapTypeControl: true,
+    mapTypeControlOptions: { style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+    zoomControl: true,
+    mapTypeId: google.maps.MapTypeId.ROADMAP}
+ map = new google.maps.Map(_Get('divMap'), myOptions);
+ google.maps.event.addListener(map, 'bounds_changed', function () {
+  var mapBD = map.getBounds();
+  var dot1 = mapBD.getNorthEast(), dot2 = mapBD.getSouthWest();
+  minLo = dot2.lng();
+  maxLo = dot1.lng();
+  minLa = dot2.lat();
+  maxLa = dot1.lat();
+  cenLo = (minLo + maxLo) / 2;
+  cenLa = (minLa + maxLa) / 2;
+ });
+ geocoder = new google.maps.Geocoder();
+}
+function getNormalizedCoord(coord, zoom){
+ var y = coord.y;
+ var x = coord.x;
+ var tileRange = 1 << zoom;
+ if(y < 0 || y >= tileRange){return null;}
+ if(x < 0 || x >= tileRange){x = (x % tileRange + tileRange) % tileRange;}
+ return { x: x, y: y };
+}
+function FindAddr(addr){
+ geocoder.geocode( { 'address': addr}, 
+  function(results, status){
+   if(status==google.maps.GeocoderStatus.OK){
+    map.setCenter(results[0].geometry.location);
+    findMarker = new google.maps.Marker({map: map,position: results[0].geometry.location});
+   }
+   else{alert('Not found:' + status);}
+  });
+}
+function FindClear(){
+  findMarker.setMap(null);
+  findMarker=null;
+}
+////定位点////
+//id,经度,纬度,图标文件,图标格式(0 png、1 gif),标签文字,附加图标(0无,1掉线,2报警)
+function Pos(id, lo, la, file, imgType, label, addon) {
+ this.ID = id;
+ this.Lo = lo;
+ this.La = la;
+
+ this.ag_ = file;
+ this.ad_ = addon;
+ this.imgTp_ = imgType;
+ this.Mark = null;
+ this.Addon = null;
+ this.Label = null;
+
+ this.point_ = new google.maps.LatLng(la, lo);
+ this.txt_ = label;
+ this.div_ = null;
+ this.map_ = map;
+ this.setMap(map);
+}
+Pos.prototype = new google.maps.OverlayView();
+Pos.prototype.onAdd = function () {
+ var id = this.ID;
+ var div = document.createElement('div');
+ div.style.border = '0';
+ div.style.position = 'absolute';
+ div.style.padding = '0'
+ div.style.cursor = 'pointer';
+ div.style.whiteSpace = 'nowrap';
+ div.onclick = function (){window.external.J_PosClick(id);}
+
+ this.Mark = document.createElement('img');
+ if(this.imgTp_ == 1)
+  this.Mark.src = _PATH + this.ag_ + '.gif';
+ else this.Mark.src = _PATH + this.ag_ + '.png';
+ this.Mark.style.width = '32';
+ this.Mark.style.height = '44';
+ div.appendChild(this.Mark);
+
+ if (this.ad_ == 1){
+  this.Addon = document.createElement('img');
+  this.Addon.className = 'icon';
+  this.Addon.src = _PATH + 'off.png';
+  this.Addon.style.width = '32';
+  this.Addon.style.height = '32';
+  div.appendChild(this.Addon);
+ }
+ else if (this.ad_ == 2){
+  this.Addon = document.createElement('img');
+  this.Addon.className = 'icon';
+  this.Addon.src = _PATH + 'alarm.gif';
+  this.Addon.style.width = '32';
+  this.Addon.style.height = '32';
+  div.appendChild(this.Addon);
+ }
+
+ if (this.txt_ != ''){
+  this.Label = document.createElement('p');
+  this.Label.className = 'label';
+  this.Label.innerHTML = this.txt_;
+  div.appendChild(this.Label);
+ }
+ this.map_ = map;
+ this.div_ = div;
+ var panes = this.getPanes();
+ panes.overlayLayer.appendChild(div);
+}
+Pos.prototype.draw = function () {
+ var overlayProjection = this.getProjection();
+ var div = this.div_;
+ var c = overlayProjection.fromLatLngToDivPixel(this.point_);
+ div.style.left = (c.x - 16) + 'px';
+ div.style.top = (c.y - 16) + 'px';
+}
+Pos.prototype.onRemove = function () {
+ if (this.Mark != null) {
+  this.div_.removeChild(this.Mark);
+  this.Mark = null;
+ }
+ if (this.Addon != null) {
+  this.div_.removeChild(this.Addon);
+  this.Addon = null;
+ }
+ if (this.Label != null) {
+  this.div_.removeChild(this.Label);
+  this.Label = null;
+ }
+ this.div_.parentNode.removeChild(this.div_);
+ this.div_ = null;
+}
+function MapCenter(lo,la,zoom){
+  map.setZoom(zoom-0);
+  map.setCenter(new google.maps.LatLng(la,lo));
+}
+function DrawCircle(lo, la, rg) {
+ area = new google.maps.Circle({strokeColor: '#5f8ff0',
+  strokeOpacity: 1,
+  strokeWeight: 2,
+  fillColor: '#46f8fe',
+  fillOpacity: 0.30,
+  map: map,
+  center: new google.maps.LatLng(la, lo),
+  radius: rg-0});
+}
+function Clear(){
+ if(area != null)
+ {
+  area.setMap(null);
+  area = null;
+ }
+}
+function MapGoto(lo,la){
+ if(lo>maxLo || lo<minLo || la>maxLa || la<minLa)
+  map.setCenter(new google.maps.LatLng(la,lo));
+}
+InitMap();
+window.onerror = _RSE_Act;
+
+var pos = null;
+function DrawPos(lo, la, name) {if(pos != null){pos.setMap(null);pos = null;}pos = new Pos(0, lo, la, 'mark', 1, name, 0);}
+google.maps.event.addListener(map, 'click', function(event){
+//alert(event.latLng.lng()+","+event.latLng.lat());
+//执行java  
+window.jsObj.HtmlcallJava(event.latLng.lng(),event.latLng.lat());
+//window.external.SetPoint(event.latLng.lng(),event.latLng.lat());
+}
+);
+
+function DrawCircleWithCenter(lo, la, rg,zoom) {
+	//青空
+	Clear();
+	//alert('la'+la+',lo'+lo+',rg,'+rg+'zoom'+zoom);
+ area = new google.maps.Circle({strokeColor: '#5f8ff0',
+  strokeOpacity: 1,
+  strokeWeight: 2,
+  fillColor: '#46f8fe',
+  fillOpacity: 0.30,
+  map: map,
+  center: new google.maps.LatLng(la, lo),
+  radius: rg-0});
+  DrawPos('1',lo, la,'safe','0','','0');
+  
+   map.setZoom(zoom-0);
+  map.setCenter(new google.maps.LatLng(la,lo));
+  
+  
+}
+
+//
+////鍝堝笇琛�////
+function HashTable() {
+ var size = 0;
+ var entry = new Object();
+ this.Add = function (key, value){
+  if(!this.ContainsKey(key)){size++;}
+  entry[key] = value;
+ }
+ this.GetValue = function (key){
+  if (this.ContainsKey(key)){return entry[key];}
+  else return null;
+ }
+ this.Remove = function(key){
+  if (this.ContainsKey(key) && (delete entry[key])){size--;}
+ }
+ this.ContainsKey = function(key){
+  return (key in entry);
+ }
+ this.ContainsValue = function(value){
+  for(var prop in entry){if(entry[prop] == value){return true;}}
+  return false;
+ }
+ this.GetValues = function(){
+  var values = new Array();
+  for (var prop in entry){values.push(entry[prop]);}
+  return values;
+ }
+ this.GetKeys = function(){
+  var keys = new Array();
+  for (var prop in entry){keys.push(prop);}
+  return keys;
+ }
+ this.GetSize = function(){return size;}
+ this.Clear = function(){size = 0;entry = new Object();}
+}
+////澶栭儴璋冪敤鍑芥暟////
+var posTable = new HashTable(),pnList = new Array(),psList = new Array(),paList = new Array();
+//id,缁忓害,绾害,鍥炬爣鏂囦欢,鍥炬爣鏍煎紡(0 png銆�1 gif),鏍囩鏂囧瓧,闄勫姞鍥炬爣(0鏃�,1鎺夌嚎,2鎶ヨ)
+function DrawPos(id, lo, la, file, imgTp, tx, ad) {
+ DelPos(id);
+ pos = new Pos(id, lo, la, file, imgTp, tx, ad);
+ posTable.Add(id, pos);
+}
+function DelPos(id) {
+ var pos = posTable.GetValue(id);
+ if (pos != null) {
+  posTable.Remove(id);
+  pos.setMap(null);
+  pos = null;
+ }
+}
+
+
+</script>
+</html>

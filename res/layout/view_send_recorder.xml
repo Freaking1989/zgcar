@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@null"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:alpha="0.8"
+        android:background="@drawable/shape_fragment_chat_image"
+        android:gravity="center" >
+
+        <TextView
+            android:id="@+id/view_recorder_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view_recorder_image"
+            android:layout_centerHorizontal="true"
+            android:text=""
+            android:layout_marginTop="10dp"
+            android:textColor="@color/color_11"
+            android:textSize="@dimen/textstyle_content" />
+
+        <ImageView
+            android:id="@+id/view_recorder_image"
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="@string/app_name"
+            android:scaleType="fitXY" />
+    </RelativeLayout>
+
+</LinearLayout>

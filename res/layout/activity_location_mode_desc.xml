@@ -1,0 +1,182 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/color_10"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_title_height" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/color_4"
+            android:gravity="center"
+            android:text="@string/location_mode_desc"
+            android:textColor="@color/color_11"
+            android:textSize="@dimen/textstyle_title" />
+
+        <ImageButton
+            android:id="@+id/location_mode_desc_back"
+            android:layout_width="@dimen/app_back_width"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:contentDescription="@string/welecome_string"
+            android:padding="13dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/selector_back_img_ib" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <ImageView
+            android:id="@+id/location_mode_desc_image_1"
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/app_name"
+            android:padding="5dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/location_gps1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/location_mode_desc_image_1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="bottom"
+                android:paddingRight="12dp"
+                android:text="@string/location_model_gps"
+                android:textColor="@color/color_6"
+                android:textSize="@dimen/textstyle_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:paddingRight="12dp"
+                android:text="@string/location_model_gps_desc"
+                android:textColor="@color/color_8"
+                android:textSize="@dimen/textstyle_desc" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/color_4" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <ImageView
+            android:id="@+id/location_mode_desc_image_2"
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/app_name"
+            android:padding="5dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/location_wifi1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/location_mode_desc_image_2"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="bottom"
+                android:paddingRight="12dp"
+                android:text="@string/location_model_wifi"
+                android:textColor="@color/color_6"
+                android:textSize="@dimen/textstyle_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:paddingRight="12dp"
+                android:text="@string/location_model_wifi_desc"
+                android:textColor="@color/color_8"
+                android:textSize="@dimen/textstyle_desc" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/color_4" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <ImageView
+            android:id="@+id/location_mode_desc_image_3"
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/app_name"
+            android:padding="5dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/location_base_station1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/location_mode_desc_image_3"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="bottom"
+                android:paddingRight="12dp"
+                android:text="@string/location_model_base_station"
+                android:textColor="@color/color_6"
+                android:textSize="@dimen/textstyle_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:paddingRight="12dp"
+                android:text="@string/location_model_base_station_desc"
+                android:textColor="@color/color_8"
+                android:textSize="@dimen/textstyle_desc" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/color_4" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:gravity="center_horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="10dp"
+        android:text="@string/location_model_select_desc" />
+
+</LinearLayout>

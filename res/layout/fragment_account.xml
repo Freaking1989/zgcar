@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.zgcar.com"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_10"
+    android:orientation="vertical"
+    tools:context=".account.ActivityAddAlarmClock" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_title_height"
+        android:background="@color/color_4"
+        android:gravity="center"
+        android:text="@string/account"
+        android:textColor="@color/color_11"
+        android:textSize="@dimen/textstyle_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fadingEdge="vertical"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/fragment_account_basics"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@drawable/selector_fragment_account_basics"
+                android:baselineAligned="false"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="15dp" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.7"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <com.zgcar.com.util.CircleImageView
+                        android:id="@+id/fragment_account_icon"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/icon"
+                        app:border_color="@color/color_9"
+                        app:border_width="@dimen/circle_image_view_width" />
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:gravity="center_vertical|right"
+                        android:paddingLeft="5dp" >
+                        <TextView
+                            android:id="@+id/fragment_account_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:gravity="center_vertical"
+                            android:text=""
+                            android:textColor="@color/color_6"
+                            android:textSize="@dimen/textstyle_content" />
+                        <TextView
+                            android:id="@+id/fragment_account_renewal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/fragment_account_name"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="3dp"
+                            android:gravity="center_vertical"
+                            android:text="@string/renewal_time"
+                            android:textColor="@color/color_8"
+                            android:textSize="@dimen/textstyle_desc" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="55dp"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/xiaohong"
+                    android:padding="18dp"
+                    android:src="@drawable/account_icon_arrow_right" />
+            </LinearLayout>
+
+            <!-- 家庭成员 -->
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/color_11" >
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+                    android:weightSum="3" >
+                    <Button
+                        android:id="@+id/fragment_account_fimily_members"
+                        android:layout_width="0dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_fragment_account_basics"
+                        android:paddingTop="5dp"
+                        android:text="@string/family"
+                        android:textColor="@color/color_6"
+                        android:textSize="@dimen/textstyle_content" />
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/color_10" />
+                    <Button
+                        android:id="@+id/fragment_account_guys_main"
+                        android:layout_width="0dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_fragment_account_basics"
+                        android:paddingTop="5dp"
+                        android:text="@string/message_info"
+                        android:textColor="@color/color_6"
+                        android:textSize="@dimen/textstyle_content" />
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/color_10" />
+                    <Button
+                        android:id="@+id/fragment_account_safety_zone"
+                        android:layout_width="0dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_fragment_account_basics"
+                        android:paddingTop="5dp"
+                        android:text="@string/location_security_guard"
+                        android:textColor="@color/color_6"
+                        android:textSize="@dimen/textstyle_content" />
+                </TableRow>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/color_10" />
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:weightSum="3" >
+                    <Button
+                        android:id="@+id/fragment_account_find_watch"
+                        android:layout_width="0dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_fragment_account_basics"
+                        android:paddingTop="5dp"
+                        android:text="设/撤防"
+                        android:textColor="@color/color_6"
+                        android:textSize="@dimen/textstyle_content" />
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/color_10" />
+                    <Button
+                        android:id="@+id/fragment_account_check_phone"
+                        android:layout_width="0dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_fragment_account_basics"
+                        android:paddingTop="5dp"
+                        android:singleLine="true"
+                        android:text="@string/shoubiaohuafei"
+                        android:textColor="@color/color_6"
+                        android:textSize="@dimen/textstyle_content" />
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/color_10" />
+                    <Button
+                        android:id="@+id/fragment_account_shut_down"
+                        android:layout_width="0dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_fragment_account_basics"
+                        android:paddingTop="5dp"
+                        android:text="@string/power_off"
+                        android:textColor="@color/color_6"
+                        android:textSize="@dimen/textstyle_content" />
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/color_10" />
+                </TableRow>
+            </TableLayout>
+
+         
+
+          
+
+            <LinearLayout
+                android:id="@+id/fragment_account_apn"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/selector_fragment_account_basics"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="15dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="0.7"
+                    android:gravity="center_vertical"
+                    android:text="@string/set_apn_title_desc"
+                    android:textColor="@color/color_6"
+                    android:textSize="@dimen/textstyle_content" />
+
+                <ImageView
+                    android:layout_width="55dp"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/xiaohong"
+                    android:padding="13dp"
+                    android:src="@drawable/account_icon_arrow_right" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fragment_account_time_zone"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/selector_fragment_account_basics"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="15dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="0.7"
+                    android:gravity="center_vertical"
+                    android:text="@string/set_zone"
+                    android:textColor="@color/color_6"
+                    android:textSize="@dimen/textstyle_content" />
+
+                <ImageView
+                    android:layout_width="55dp"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/xiaohong"
+                    android:padding="13dp"
+                    android:src="@drawable/account_icon_arrow_right" />
+            </LinearLayout>
+           
+
+          
+
+            <LinearLayout
+                android:id="@+id/fragment_account_system_set"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/selector_fragment_account_basics"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="15dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="0.7"
+                    android:gravity="center_vertical"
+                    android:text="@string/set"
+                    android:textColor="@color/color_6"
+                    android:textSize="@dimen/textstyle_content" />
+
+                <ImageView
+                    android:layout_width="55dp"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/xiaohong"
+                    android:padding="13dp"
+                    android:src="@drawable/account_icon_arrow_right" />
+            </LinearLayout>
+
+            <!-- 消息提醒 -->
+
+
+            <!-- 用户信息 -->
+
+
+            <!-- 账户管理 -->
+
+
+            <!-- 系统设置 -->
+
+
+            <!-- 离线地图 -->
+
+
+            <!-- 意见反馈 -->
+
+
+            <!-- 关于考拉 -->
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

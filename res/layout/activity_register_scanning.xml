@@ -1,0 +1,79 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+         android:layout_height="@dimen/app_title_height"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/color_4"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/color_11"
+            android:textSize="@dimen/textstyle_title" />
+
+        <ImageButton
+            android:id="@+id/register_scanning_back"
+            android:layout_width="@dimen/app_back_width"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:contentDescription="@string/welecome_string"
+            android:padding="13dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/selector_back_img_ib" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" 
+         >
+
+        <SurfaceView
+            android:id="@+id/register_scanning_view"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            tools:ignore="ObsoleteLayoutParam" />
+
+        <com.zgcar.com.zxing.view.ViewfinderView
+            android:id="@+id/register_scanning_viewfinder_view"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/transparent" />
+
+        <TextView
+            android:id="@+id/register_scanning_state_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="@string/scanning_state"
+            android:textColor="@color/color_11"
+            android:textSize="@dimen/textstyle_content" />
+
+        <Button
+            android:id="@+id/register_scanning_input_manually"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/selector_next_button"
+            android:clickable="true"
+            android:padding="15dp"
+            android:text="@string/queren"
+            android:textColor="@drawable/selector_next_color"
+            android:textSize="@dimen/textstyle_content" />
+    </RelativeLayout>
+
+</LinearLayout>

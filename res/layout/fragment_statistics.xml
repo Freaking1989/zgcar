@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.zgcar.com"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_10"
+    android:orientation="vertical"
+    tools:context=".account.ActivityAddAlarmClock" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_title_height"
+        android:background="@color/color_4"
+        android:gravity="center"
+        android:text="@string/fragment_statistics"
+        android:textColor="@color/color_11"
+        android:textSize="@dimen/textstyle_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fadingEdge="vertical"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/color_11" >
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+                    android:weightSum="2" >
+
+                    <Button
+                        android:id="@+id/fragment_chat_bt1"
+                        android:layout_width="0dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_fragment_account_basics"
+                        android:paddingTop="5dp"
+                        android:text="@string/fragment_radio2_table_desc1"
+                        android:textColor="@color/color_6"
+                        android:textSize="@dimen/textstyle_content" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/color_10" />
+
+                    <Button
+                        android:id="@+id/fragment_chat_bt2"
+                        android:layout_width="0dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_fragment_account_basics"
+                        android:paddingTop="5dp"
+                        android:text="@string/fragment_radio2_table_desc2"
+                        android:textColor="@color/color_6"
+                        android:textSize="@dimen/textstyle_content" />
+                </TableRow>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/color_10" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:weightSum="2" >
+
+                    <Button
+                        android:id="@+id/fragment_chat_bt3"
+                        android:layout_width="0dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_fragment_account_basics"
+                        android:paddingTop="5dp"
+                        android:text="@string/fragment_radio2_table_desc3"
+                        android:textColor="@color/color_6"
+                        android:textSize="@dimen/textstyle_content" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/color_10" />
+
+                    <Button
+                        android:id="@+id/fragment_chat_bt4"
+                        android:layout_width="0dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_fragment_account_basics"
+                        android:paddingTop="5dp"
+                        android:text="@string/fragment_radio2_table_desc4"
+                        android:textColor="@color/color_6"
+                        android:textSize="@dimen/textstyle_content" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/color_10" />
+                </TableRow>
+            </TableLayout>
+
+            <!-- 上课模式 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/selector_fragment_account_basics"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="15dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="0.7"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textColor="@color/color_6"
+                    android:textSize="@dimen/textstyle_content" />
+
+                <ImageView
+                    android:layout_width="55dp"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/xiaohong"
+                    android:padding="13dp"
+                    android:src="@drawable/account_icon_arrow_right" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/selector_fragment_account_basics"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="15dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="0.7"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textColor="@color/color_6"
+                    android:textSize="@dimen/textstyle_content" />
+
+                <ImageView
+                    android:layout_width="55dp"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/xiaohong"
+                    android:padding="13dp"
+                    android:src="@drawable/account_icon_arrow_right" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/selector_fragment_account_basics"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="15dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="0.7"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textColor="@color/color_6"
+                    android:textSize="@dimen/textstyle_content" />
+
+                <ImageView
+                    android:layout_width="55dp"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/xiaohong"
+                    android:padding="13dp"
+                    android:src="@drawable/account_icon_arrow_right" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/selector_fragment_account_basics"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="15dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="0.7"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textColor="@color/color_6"
+                    android:textSize="@dimen/textstyle_content" />
+
+                <ImageView
+                    android:layout_width="55dp"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/xiaohong"
+                    android:padding="13dp"
+                    android:src="@drawable/account_icon_arrow_right" />
+            </LinearLayout>
+            <!-- 蓝牙防走丢 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/selector_fragment_account_basics"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="15dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="0.7"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textColor="@color/color_6"
+                    android:textSize="@dimen/textstyle_content" />
+
+                <ImageView
+                    android:layout_width="55dp"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/xiaohong"
+                    android:padding="13dp"
+                    android:src="@drawable/account_icon_arrow_right" />
+            </LinearLayout>
+
+            <!-- 小红花 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/selector_fragment_account_basics"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="15dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="0.7"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textColor="@color/color_6"
+                    android:textSize="@dimen/textstyle_content" />
+
+                <ImageView
+                    android:layout_width="55dp"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/xiaohong"
+                    android:padding="13dp"
+                    android:src="@drawable/account_icon_arrow_right" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

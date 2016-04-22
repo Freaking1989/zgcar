@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_10"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/view_study_model_select_week_everyday"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@android:color/transparent"
+        android:text="@string/everyday_desc"
+        android:textColor="@drawable/selector_textcolor_pressed_location"
+        android:textSize="@dimen/textstyle_content" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@color/color_9" />
+
+    <Button
+        android:id="@+id/view_study_model_select_week_days"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@android:color/transparent"
+        android:text="@string/monday_to_friday_desc"
+        android:textColor="@drawable/selector_textcolor_pressed_location"
+        android:textSize="@dimen/textstyle_content" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@color/color_9" />
+
+    <Button
+        android:id="@+id/view_study_model_select_week_custom"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@android:color/transparent"
+        android:text="@string/customs"
+        android:textColor="@drawable/selector_textcolor_pressed_location"
+        android:textSize="@dimen/textstyle_content" />
+
+</LinearLayout>

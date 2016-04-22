@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_10"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_title_height"
+        android:background="@color/color_4"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textColor="@color/color_11"
+        android:textSize="@dimen/textstyle_title" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        android:text="@string/input_telphone_num"
+        android:textColor="@color/color_6"
+        android:textSize="@dimen/textstyle_content" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginLeft="15dp"
+        android:gravity="center_vertical"
+        android:text="@string/desc"
+        android:textColor="@color/color_8"
+        android:textSize="@dimen/textstyle_desc" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/shape_loading_edittext"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/_86"
+            android:textColor="@color/color_8"
+            android:textSize="@dimen/textstyle_content" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/color_9" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/loading_input_telphone_num"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="45dp"
+                android:background="@null"
+                android:cursorVisible="true"
+                android:hint="@string/input_telphone_num"
+                android:inputType="number"
+                android:paddingBottom="3dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="3dp"
+                android:textColor="@color/color_6"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/textstyle_content" />
+
+            <ImageButton
+                android:id="@+id/loading_clear_ib"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/app_name"
+                android:padding="13dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/selector_inputbox_icon_delete" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/loading_next_bt"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/selector_next_button"
+        android:text="@string/next"
+        android:textColor="@drawable/selector_next_color"
+        android:textSize="@dimen/textstyle_content" />
+
+</LinearLayout>

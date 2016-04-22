@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:background="@null"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingTop="20dp" >
+
+    <ImageView
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:background="@drawable/icon"
+        android:contentDescription="@string/zhendong" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="@string/customs"
+        android:textColor="@color/color_6"
+        android:textSize="@dimen/textstyle_content" />
+
+</LinearLayout>

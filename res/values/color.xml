@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <color name="black">#000000</color>
+    <color name="blue">#2A00FF</color>
+    <color name="search">#ffffffff</color>
+    <color name="tab_bg">#E4E4E4</color>
+    <color name="color_1_pressed">#fba459</color>
+    <color name="color_4">#5eb0e5</color>
+    <color name="color_4_1">#FF5EB0E5</color>
+    <color name="color_5">#293e6b</color>
+    <color name="color_6">#222222</color>
+    <color name="color_7">#666666</color>
+    <color name="color_8">#999999</color>
+    <color name="color_9">#cccccc</color>
+    <color name="color_10">#f8f8f8</color>
+    <color name="color_11">#ffffff</color>
+    <color name="color_12">#f40000</color>
+    <color name="contents_text">#ff000000</color>
+    <color name="encode_view">#ffffffff</color>
+    <color name="help_button_view">#ffcccccc</color>
+    <color name="help_view">#ff404040</color>
+    <color name="possible_result_points">#c0ffff00</color>
+    <color name="result_minor_text">#ffc0c0c0</color>
+    <color name="result_points">#c000ff00</color>
+    <color name="result_view">#b0000000</color>
+    <color name="sbc_header_text">#ff808080</color>
+    <color name="sbc_list_item">#fffff0e0</color>
+    <color name="sbc_page_number_text">#ff000000</color>
+    <color name="sbc_snippet_text">#ff4b4b4b</color>
+    <color name="share_text">#ff000000</color>
+    <color name="status_view">#50000000</color>
+    <color name="viewfinder_laser">#ffff0000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="transparent">#00000000</color>
+
+</resources>
