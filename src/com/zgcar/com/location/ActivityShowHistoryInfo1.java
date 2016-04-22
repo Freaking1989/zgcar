@@ -87,7 +87,8 @@ public class ActivityShowHistoryInfo1 extends Activity implements
 	private LatLng moveMarkerPosition;
 	private int playerTime;
 	private LinearLayout seekBarLayout;
-
+	private Button isAll;
+	private boolean filterIsOpen;
 	@SuppressLint("HandlerLeak")
 	private Handler handler = new Handler() {
 		@Override
@@ -96,7 +97,8 @@ public class ActivityShowHistoryInfo1 extends Activity implements
 			switch (msg.what) {
 			case 0:// 判断是否有数据
 				dismissDialog();
-				if (list.size() > 0) {
+				if (list != null && list.size() > 0) {
+					filterIsOpen = false;
 					doDrawJPoint(true);
 				} else {
 					Util.showToastBottom(ActivityShowHistoryInfo1.this,
@@ -146,12 +148,14 @@ public class ActivityShowHistoryInfo1 extends Activity implements
 
 	// 初始化
 	private void init() {
+		filterIsOpen = false;
 		playerTime = 80;
 		tempPosition = 0;
 		app = (MyApplication) getApplication();
 		ImageButton back = (ImageButton) findViewById(R.id.show_history_info_back);
 		back.setOnClickListener(this);
-		Button isAll = (Button) findViewById(R.id.button2);
+		isAll = (Button) findViewById(R.id.button2);
+		isAll.setVisibility(View.VISIBLE);
 		isAll.setOnClickListener(this);
 		player = (Button) findViewById(R.id.button1);
 		player.setVisibility(View.VISIBLE);
@@ -196,17 +200,26 @@ public class ActivityShowHistoryInfo1 extends Activity implements
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.button2:// 返回历史轨迹
+
 			aMap.clear();
 			if (polyline != null) {
 				polyline.setPoints(new ArrayList<LatLng>());
 			}
 			clearPlayerData();
-			if (list1.size() > 0) {
-				doDrawJPoint(false);
-			} else {
-				Util.showToastBottom(ActivityShowHistoryInfo1.this,
-						getString(R.string.no_baby_history_info));
+			if (!filterIsOpen) {
+				if (list1 != null && list1.size() > 0) {
+					isAll.setText("过滤模糊:开");
+					filterIsOpen = true;
+					doDrawJPoint(false);
+				} else {
+					Util.showToastBottom(ActivityShowHistoryInfo1.this,
+							getString(R.string.no_baby_history_info));
+				}
+				break;
 			}
+			isAll.setText("过滤模糊:关");
+			handler.sendEmptyMessage(0);
+
 			break;
 		case R.id.button1:// 返回历史轨迹
 			if (!isPlayer && polyline != null
@@ -277,6 +290,7 @@ public class ActivityShowHistoryInfo1 extends Activity implements
 	/**
 	 * 算取斜率
 	 */
+	@SuppressWarnings("unused")
 	private double getSlope(int startIndex) {
 		if ((startIndex + 1) >= polyline.getPoints().size()) {
 			throw new RuntimeException("index out of bonds");
@@ -289,6 +303,7 @@ public class ActivityShowHistoryInfo1 extends Activity implements
 	/**
 	 * 算斜率
 	 */
+
 	private double getSlope(LatLng fromPoint, LatLng toPoint) {
 		if (toPoint.longitude == fromPoint.longitude) {
 			return Double.MAX_VALUE;
@@ -543,6 +558,7 @@ public class ActivityShowHistoryInfo1 extends Activity implements
 						handler.sendMessage(handler.obtainMessage(0));
 					} else {
 						list = new ArrayList<HistoryEntity>();
+						list1 = new ArrayList<HistoryEntity>();
 						dismissDialog();
 						Looper.prepare();
 						Util.showToastBottom(ActivityShowHistoryInfo1.this,
@@ -556,10 +572,10 @@ public class ActivityShowHistoryInfo1 extends Activity implements
 	}
 
 	private void getList1() {
+		list1 = new ArrayList<HistoryEntity>();
 		if (list == null || list.size() <= 0) {
 			return;
 		}
-		list1 = new ArrayList<HistoryEntity>();
 		for (HistoryEntity info : list) {
 			if (info.getLocation_type() != 2) {
 				list1.add(info);
@@ -604,13 +620,15 @@ public class ActivityShowHistoryInfo1 extends Activity implements
 
 	@Override
 	public void getDataHositoryInfos(String date) {
+		isAll.setText("过滤模糊:关");
+		filterIsOpen = false;
 		showProgressDialog();
 		clearPlayerData();
 		this.date = date;
 		titleDate.setText(date);
 		aMap.clear();
 		if (polyline != null) {
-			polyline.setPoints(new ArrayList<LatLng>());
+			polyline.setPoints(new ArrayList<LatLng>(  ));
 		}
 		HistoryRequest();
 	}
