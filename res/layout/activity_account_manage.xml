@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_10"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+           android:layout_height="@dimen/app_title_height"  >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_4"
+            android:gravity="center"
+            android:text="@string/account_guanli"
+            android:textColor="@color/color_11"
+            android:textSize="@dimen/textstyle_title" />
+
+        <ImageButton
+            android:id="@+id/account_manage_back"
+            android:layout_width="@dimen/app_back_width"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:contentDescription="@string/welecome_string"
+            android:padding="13dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/selector_back_img_ib" />
+    </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@null"
+            android:baselineAligned="false"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="30dp"
+            android:paddingRight="15dp"
+            android:text="@string/change_password_des"
+            android:textColor="@color/color_8"
+            android:textSize="@dimen/textstyle_content" />
+
+        <EditText
+            android:id="@+id/account_manage_old_psw"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/shape_loading_edittext"
+            android:baselineAligned="false"
+            android:cursorVisible="true"
+            android:digits="0123456789abcdefghigklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:gravity="center_vertical"
+            android:hint="@string/input_old_password"
+            android:inputType="textPassword"
+            android:maxLength="16"
+            android:orientation="horizontal"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:textColor="@color/color_6"
+            android:textColorHint="@color/color_8"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/textstyle_content" />
+
+        <EditText
+            android:id="@+id/account_manage_new_psw1"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/shape_loading_edittext"
+            android:baselineAligned="false"
+            android:cursorVisible="true"
+            android:digits="0123456789abcdefghigklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:gravity="center_vertical"
+            android:hint="@string/input_new_password"
+            android:inputType="textPassword"
+            android:maxLength="16"
+            android:orientation="horizontal"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:textColor="@color/color_6"
+            android:textColorHint="@color/color_8"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/textstyle_content" />
+
+        <EditText
+            android:id="@+id/account_manage_new_psw2"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/shape_loading_edittext"
+            android:baselineAligned="false"
+            android:clickable="true"
+            android:cursorVisible="true"
+            android:digits="0123456789abcdefghigklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:gravity="center_vertical"
+            android:hint="@string/input_once_new_password"
+            android:inputType="textPassword"
+            android:maxLength="16"
+            android:orientation="horizontal"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:textColor="@color/color_6"
+            android:textColorHint="@color/color_8"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/textstyle_content" />
+
+        <Button
+            android:id="@+id/account_manage_get_psw"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_gravity="end"
+            android:layout_marginRight="15dp"
+            android:background="@null"
+            android:clickable="true"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:paddingTop="5dp"
+            android:text="@string/forget_password"
+            android:textColor="@drawable/selector_loading_textview"
+            android:textSize="@dimen/textstyle_desc" />
+
+        <Button
+            android:id="@+id/account_manage_finish"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/selector_next_button"
+            android:text="@string/finish"
+            android:textColor="@drawable/selector_next_color"
+            android:textSize="@dimen/textstyle_content" />
+
+</LinearLayout>

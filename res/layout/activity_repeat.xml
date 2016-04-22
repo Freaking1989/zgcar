@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_10"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_title_height" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_4"
+            android:gravity="center"
+            android:text="@string/repeat"
+            android:textColor="@color/color_11"
+            android:textSize="@dimen/textstyle_title" />
+
+        <ImageButton
+            android:id="@+id/repeat_back"
+            android:layout_width="@dimen/app_back_width"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:contentDescription="@string/welecome_string"
+            android:padding="13dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/selector_back_img_ib" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_10" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:orientation="vertical" >
+
+            <CheckBox
+                android:id="@+id/repeat_is_or_not"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/selector_fragment_account_button"
+                android:button="@null"
+                android:checked="false"
+                android:drawableRight="@drawable/selector_check_box"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="@string/repeat"
+                android:textColor="@color/color_6"
+                android:textSize="@dimen/textstyle_content" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/color_9" />
+
+            <CheckBox
+                android:id="@+id/repeat_sunday"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/selector_fragment_account_button"
+                android:button="@null"
+                android:checked="false"
+                android:drawableRight="@drawable/selector_check_box"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="@string/sunday"
+                android:textColor="@color/color_6"
+                android:textSize="@dimen/textstyle_content" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/color_9" />
+
+            <CheckBox
+                android:id="@+id/repeat_monday"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/selector_fragment_account_button"
+                android:button="@null"
+                android:checked="false"
+                android:drawableRight="@drawable/selector_check_box"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="@string/monday"
+                android:textColor="@color/color_6"
+                android:textSize="@dimen/textstyle_content" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/color_9" />
+
+            <CheckBox
+                android:id="@+id/repeat_tuesday"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/selector_fragment_account_button"
+                android:button="@null"
+                android:checked="false"
+                android:drawableRight="@drawable/selector_check_box"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="@string/tuesday"
+                android:textColor="@color/color_6"
+                android:textSize="@dimen/textstyle_content" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/color_9" />
+
+            <CheckBox
+                android:id="@+id/repeat_wednesday"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/selector_fragment_account_button"
+                android:button="@null"
+                android:checked="false"
+                android:drawableRight="@drawable/selector_check_box"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="@string/wednesday"
+                android:textColor="@color/color_6"
+                android:textSize="@dimen/textstyle_content" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/color_9" />
+
+            <CheckBox
+                android:id="@+id/repeat_thursday"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/selector_fragment_account_button"
+                android:button="@null"
+                android:checked="false"
+                android:drawableRight="@drawable/selector_check_box"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="@string/thursday"
+                android:textColor="@color/color_6"
+                android:textSize="@dimen/textstyle_content" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/color_9" />
+
+            <CheckBox
+                android:id="@+id/repeat_friday"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/selector_fragment_account_button"
+                android:button="@null"
+                android:checked="false"
+                android:drawableRight="@drawable/selector_check_box"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="@string/friday"
+                android:textColor="@color/color_6"
+                android:textSize="@dimen/textstyle_content" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/color_9" />
+
+            <CheckBox
+                android:id="@+id/repeat_saturday"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/selector_fragment_account_button"
+                android:button="@null"
+                android:checked="false"
+                android:drawableRight="@drawable/selector_check_box"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="@string/saturday"
+                android:textColor="@color/color_6"
+                android:textSize="@dimen/textstyle_content" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

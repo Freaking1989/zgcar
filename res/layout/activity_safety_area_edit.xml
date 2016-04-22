@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_10"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/aqq_modify"
+        android:layout_width="match_parent"
+         android:layout_height="@dimen/app_title_height" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_4"
+            android:gravity="center"
+            android:text="@string/location_security_guard"
+            android:textColor="@color/color_11"
+            android:textSize="@dimen/textstyle_title" />
+
+        <ImageButton
+            android:id="@+id/safety_edit_area_back"
+              android:layout_width="@dimen/app_back_width"
+           android:layout_height="match_parent"
+            android:background="@null"
+            android:contentDescription="@string/welecome_string"
+            android:padding="13dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/selector_back_img_ib" />
+
+        <ImageButton
+            android:id="@+id/safety_edit_area_search"
+             android:layout_width="@dimen/app_back_width"
+           android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:contentDescription="@string/xiaohong"
+            android:padding="13dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/title_icon_search" />
+    </RelativeLayout>
+
+    <!-- 引入布局文件 -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_10"
+        android:clipToPadding="true"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical" >
+
+        <WebView
+            android:id="@+id/add_safety_area_webview"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/safety_linearlayout" />
+
+        <com.amap.api.maps.MapView
+            android:id="@+id/mapveiw_modify"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/safety_linearlayout" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:stretchColumns="1" >
+
+            <TextView
+                android:id="@+id/safety_edit_area_seekbar_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:text="@string/stroke_circle"
+                android:textColor="@color/color_6"
+                android:textSize="@dimen/textstyle_content" />
+
+            <SeekBar
+                android:id="@+id/safety_edit_area_seekbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="700"
+                android:paddingRight="15dp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/safety_edit_area_save"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/color_4"
+            android:clickable="true"
+            android:text="@string/save"
+            android:textColor="@color/color_11"
+            android:textSize="@dimen/textstyle_content" />
+
+        <LinearLayout
+            android:id="@+id/safety_linearlayout"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_above="@+id/safety_edit_area_save"
+            android:background="@color/color_10"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="55dp"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/xiaohong"
+                android:scaleType="center"
+                android:src="@drawable/safetyzone_icon_otherplace" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:paddingLeft="15dp"
+                        android:text="@string/zonename"
+                        android:textColor="@color/color_6"
+                        android:textSize="@dimen/textstyle_content" />
+
+                    <TextView
+                        android:id="@+id/safety_edit_area_title_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:hint="@string/edit"
+                        android:paddingRight="15dp"
+                        android:textColor="@color/color_6"
+                        android:textSize="@dimen/textstyle_content" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/safety_edit_area_address_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:ellipsize="marquee"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center_vertical"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textColor="@color/color_6"
+                    android:textSize="@dimen/textstyle_content" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#b0000000"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="15dp"
+        android:background="@drawable/shape_alertdialog"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@null"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="@string/bluetooth_alarm_desc"
+            android:textColor="@color/color_6"
+            android:textSize="@dimen/textstyle_title" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/color_9" />
+
+        <Button
+            android:id="@+id/view_bluetooth_alarm_bt"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@null"
+            android:text="@string/dialog_positive"
+            android:textColor="@drawable/selector_view_dialog_textcolor"
+            android:textSize="@dimen/textstyle_content" />
+    </LinearLayout>
+
+</RelativeLayout>

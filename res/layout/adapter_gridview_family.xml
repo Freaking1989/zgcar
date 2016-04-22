@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.zgcar.com"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <com.zgcar.com.util.CircleImageView
+        android:id="@+id/adapter_gridview_family_icon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/icon"
+        app:border_color="@color/color_9"
+        app:border_width="@dimen/circle_image_view_width" />
+    
+
+    <TextView
+        android:id="@+id/adapter_gridview_family_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/color_6"
+        android:textSize="@dimen/textstyle_content" />
+
+</LinearLayout>

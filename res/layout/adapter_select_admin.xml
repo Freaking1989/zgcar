@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.zgcar.com"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="@drawable/selector_fragment_account_basics"
+    android:baselineAligned="false"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+
+    <RelativeLayout
+        android:id="@+id/relativelayout"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginLeft="15dp" >
+
+        <com.zgcar.com.util.CircleImageView
+            android:id="@+id/adapter_select_admin_icon"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/icon"
+            app:border_color="@color/color_9"
+            app:border_width="@dimen/circle_image_view_width" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="1dp"
+        android:layout_weight="2"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingLeft="5dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/adapter_select_admin_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:gravity="bottom"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/color_6"
+                android:textSize="@dimen/textstyle_content" />
+
+            <TextView
+                android:id="@+id/adapter_select_admin_desc"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="8dp"
+                android:gravity="bottom"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/color_8"
+                android:textSize="@dimen/textstyle_desc"
+                android:visibility="invisible" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/adapter_select_admin_u_name"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text=""
+            android:textColor="@color/color_8"
+            android:textSize="@dimen/textstyle_desc" />
+    </LinearLayout>
+
+    <!-- @drawable/selector_check_box -->
+
+    <CheckBox
+        android:id="@+id/adapter_select_admin_check_box"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginRight="15dp"
+        android:background="@null"
+        android:checked="true"
+        android:gravity="center" />
+
+</LinearLayout>

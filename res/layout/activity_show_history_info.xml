@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_10"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical" >
+
+    <!-- 导航 S -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_title_height"
+        android:background="@color/color_4"
+        android:baselineAligned="false"
+        android:clickable="true"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/show_history_info_back"
+            android:layout_width="@dimen/app_back_width"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:contentDescription="@string/welecome_string"
+            android:padding="13dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/selector_back_img_ib" />
+
+        <LinearLayout
+            android:id="@+id/show_history_info_select_date"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:background="@android:color/transparent"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/show_history_info_date_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/color_11" />
+
+            <ImageView
+                android:id="@+id/show_history_info_date_state"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/app_name"
+                android:padding="18dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/arr_down" />
+        </LinearLayout>
+    </RelativeLayout>
+    <!-- 导航 E -->
+
+
+    <!-- 下部分 S -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <WebView
+            android:id="@+id/history_show_infos_webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/linearlayout"
+            android:visibility="gone" />
+
+        <com.amap.api.maps.MapView
+            android:id="@+id/show_history_info_mapview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/linearlayout"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/history_show_infos_seekbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="0.8"
+            android:background="@color/color_9"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/history_show_infos_seekbar_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:text="播放速度 X 1"
+                android:textColor="@color/color_6"
+                android:textSize="@dimen/textstyle_content" />
+
+            <SeekBar
+                android:id="@+id/history_show_infos_seekbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="10"
+                android:progress="5"
+                android:progressDrawable="@drawable/seekbar_progress_img"
+                android:thumb="@drawable/progress_button" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/linearlayout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true" >
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/selector_next_button"
+                android:text="回放" />
+
+            <RelativeLayout
+                android:id="@+id/show_history_info_time_layout"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_toLeftOf="@+id/button1"
+                android:orientation="horizontal"
+                android:paddingRight="5dp" >
+
+                <com.zgcar.com.util.MyTextView
+                    android:id="@+id/show_history_info_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toLeftOf="@+id/button2"
+                    android:ellipsize="marquee"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center_vertical"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textColor="@color/color_6"
+                    android:textSize="@dimen/textstyle_content" />
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/selector_next_button"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:text="过滤模糊"
+                    android:textColor="@color/color_11"
+                    android:textSize="@dimen/textstyle_content" />
+            </RelativeLayout>
+
+            <com.zgcar.com.util.MyTextView
+                android:id="@+id/show_history_info_desc"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_below="@+id/show_history_info_time_layout"
+                android:layout_toLeftOf="@+id/button1"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center_vertical"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/color_6"
+                android:textSize="@dimen/textstyle_content" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <!-- 下部分 E -->
+
+</LinearLayout>

@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="error_code_1001">获取验证码失败!</string>
+    <string name="error_code_1002">SQL数据库出错!</string>
+    <string name="error_code_1003">用户名或密码错误!</string>
+    <string name="error_code_1004">用户名不可用!</string>
+    <string name="error_code_1005">验证码错误!</string>
+    <string name="error_code_1006">创建组出错!</string>
+    <string name="error_code_1007">此终端无记录!</string>
+    <string name="error_code_1008">错误的组ID!</string>
+    <string name="error_code_1009">数据库无默认组!</string>
+    <string name="error_code_1010">无此终端!</string>
+    <string name="error_code_1011">围栏名称重复!</string>
+    <string name="error_code_1012">无此电子围栏!</string>
+    <string name="error_code_1013">指令发送失败,终端不在线!</string>
+    <string name="error_code_1014">称谓(0000)重复!</string>
+    <string name="error_code_1015">已绑定,不可重复绑定!</string>
+    <string name="error_code_8888">指令错误!</string>
+    <string name="error_code_9999">Json 格式错误!</string>
+    <string name="error_code_default">获取数据失败!</string>
+    <string name="fragment_radio2_table_desc1">里程统计</string>
+    <string name="fragment_radio2_table_desc2">运行总览</string>
+    <string name="fragment_radio2_table_desc3">超速详单</string>
+    <string name="fragment_radio2_table_desc4">报警统计</string>
+    <string name="not_find_watch">不存在该信息来源终端!</string>
+    <string name="can_not_connect_server">无法连接到服务端，网络异常!</string>
+    <string name="play_voice_failed">播放失败!</string>
+    <string name="please_select_wear_model">请选择习惯模式!</string>
+    <string name="record_will_timeout">录音即将超时!</string>
+    <string name="record_has_timeout">录音超时,正在准备上传.</string>
+    <string name="please_select_ring">请选择铃声!</string>
+    <string name="prepare3">准备中 &#8230;</string>
+    <string name="press_and_speak">按住说话</string>
+    <string name="slide_cancle">手指上滑,取消发送</string>
+    <string name="no_sd_card">无sd卡，无法进行录音!</string>
+    <string name="high_desc">cm</string>
+    <string name="weith_desc">kg</string>
+    <string name="fragment_statistics">统计报表</string>
+    <string name="man">男</string>
+    <string name="woman">女</string>
+    <string name="save">保存</string>
+    <string name="voice">声音</string>
+    <string name="message">聊天</string>
+    <string name="zhendong">震动</string>
+    <string name="you_admin_and_you_can">您是管理员，您将：</string>
+    <string name="remove_myself">仅解绑自己</string>
+    <string name="remove_all">解绑所有人</string>
+    <string name="wechat">微信</string>
+    <string name="sina_weibo">新浪微博</string>
+    <string name="screenshots_sharing_failure">截图分享失败!</string>
+    <string name="please_install_first">请先安装</string>
+    <string name="target_has_reached">目标已达到!</string>
+    <string name="target_has_not_set">小红花目标暂未设定!</string>
+    <string name="initialization_failed">初始化失败!!!</string>
+    <string name="path_planning_error">路径规划失败</string>
+    <string name="open_the_gps">请打开GPS进行导航定位</string>
+    <string name="check_network_or_input_parameters">路径计算失败，请检查网络或输入参数</string>
+    <string name="end_of_the_navigation">导航结束</string>
+    <string name="path_calculation_ready">路径计算就绪</string>
+    <string name="route_planning_agin">前方路线拥堵，路线重新规划</string>
+    <string name="you_have_been_yaw">您已偏航</string>
+    <string name="arrive_at_the_destination">到达目的地</string>
+    <string name="resent_no_desc">暂无</string>
+    <string name="register">注册</string>
+    <string name="loading">登陆</string>
+    <string name="repeat">重复</string>
+    <string name="searching">正在搜索:</string>
+    <string name="information_is_null">未查询到相关信息!!!!</string>
+    <string name="sex">性别</string>
+    <string name="go_here">到那里去</string>
+    <string name="enlarge">+</string>
+    <string name="shrink">—</string>
+    <string name="home_desc">首页</string>
+    <string name="location">定位</string>
+    <string name="dialog_negative">取消</string>
+    <string name="set_flower_num_desc">设置小红花数量</string>
+    <string name="dialog_positive">确定</string>
+    <string name="baby">宝贝</string>
+    <string name="birthday">生日</string>
+    <string name="high">身高</string>
+    <string name="wight">体重</string>
+    <string name="finish">完成</string>
+    <string name="history">历史轨迹</string>
+    <string name="xiangqing">查看详情>></string>
+    <string name="see">查看</string>
+    <string name="guanxi">关系编辑</string>
+    <string name="hujiao">呼叫</string>
+    <string name="luyin">录音</string>
+    <string name="monitor">监听</string>
+    <string name="is_geting_address">正在获取地址信息</string>
+    <string name="no_result">对不起，没有搜索到相关数据！</string>
+    <string name="error_network">搜索失败,请检查网络连接！</string>
+    <string name="error_key">key验证无效！</string>
+    <string name="error_other">未知错误，请稍后重试!错误码为</string>
+    <string name="relation_relative">亲人</string>
+    <string name="location_qiqiu">"获取定位失败请重定位"</string>
+    <string name="scanning_state">请将摄像头对准包装盒上左侧二维码进行扫描</string>
+    <string name="please_input_imei_desc">请输入IMEI号</string>
+    <string name="title_can_not_null">安全区域名称不能为空</string>
+    <string name="stroke_circle">米</string>
+    <string name="range">半径</string>
+    <string name="deletezone">你确定删除该围栏？</string>
+    <string name="zonename">安全区域名称:</string>
+    <string name="edit">【点击编辑】</string>
+    <string name="press_edit">点击编辑</string>
+    <string name="addsafety">添加安全区域</string>
+    <string name="domainname">区域名称</string>
+    <string name="xuexiao">学校</string>
+    <string name="home">家</string>
+    <string name="homes">点击设置家位置</string>
+    <string name="xuexiaos">点击设置学校位置</string>
+    <string name="firm">公司</string>
+    <string name="customs">自定义</string>
+    <string name="input_phone">请输入监听号码</string>
+    <string name="new_watch">添加爱车</string>
+    <string name="baobei">我的宝贝</string>
+    <string name="imei">IMEI</string>
+    <string name="shuru">请输入说明书上的IMEI号</string>
+    <string name="keyword">请输入关键字</string>
+    <string name="search">搜索</string>
+    <string name="sim">SIM</string>
+    <string name="simka">请输入手机号码</string>
+    <string name="saoma">扫码</string>
+    <string name="me">我</string>
+    <string name="grandpahome">爷爷家</string>
+    <string name="teacherhome">老师家</string>
+    <string name="cramschool">补习班</string>
+    <string name="please">请输入区域名称(家，学校 &#8230;)</string>
+    <string name="history_def_name">名称</string>
+    <string name="history_def_address">位置</string>
+    <string name="change_nick_name">更改昵称</string>
+    <string name="queren">手动输入IMEI号</string>
+    <string name="zone_desc">GMT-8:00</string>
+    <string name="chat">聊天</string>
+    <string name="interest">历史</string>
+    <string name="account">管理</string>
+    <string name="alarm_clock">闹钟</string>
+    <string name="volume">音量</string>
+    <string name="renewal">续费</string>
+    <string name="brightness">亮度</string>
+    <string name="app_name">汽车管家</string>
+    <string name="time">04:45</string>
+    <string name="qr_code">绑定号二维码</string>
+    <string name="next">下一步</string>
+    <string name="time_desc">工作日</string>
+    <string name="shoubiaohuafei">查话费</string>
+    <string name="study">上课禁用</string>
+    <string name="quit">退出登录</string>
+    <string name="map">离线地图</string>
+    <string name="set">系统设置</string>
+    <string name="change_password">重置密码</string>
+    <string name="edit_basics">资料编辑</string>
+    <string name="select_bell">铃声选择</string>
+    <string name="tiganyouxi">体感游戏</string>
+    <string name="xiaohong">小红花榜</string>
+    <string name="around">周边产品</string>
+    <string name="guangfang">官方活动</string>
+    <string name="find_watch">找设备</string>
+    <string name="open">已开启</string>
+    <string name="message_info"> 断油/电 </string>
+    <string name="not_repeat">不重复</string>
+    <string name="not_save_and_quit">放弃编辑并退出?</string>
+    <string name="start_should_befor_end">开始时间应在结束时间之前!</string>
+    <string name="sunday">周日</string>
+    <string name="monday">周一</string>
+    <string name="tuesday">周二</string>
+    <string name="wednesday">周三</string>
+    <string name="thursday">周四</string>
+    <string name="friday">周五</string>
+    <string name="saturday">周六</string>
+    <string name="family">管理成员</string>
+    <string name="forget_password">忘记密码</string>
+    <string name="new_password_not_consistent">新密码不一致</string>
+    <string name="password_length_error">密码应为6&#8211;16位</string>
+    <string name="telphone_num_desc">手机号码</string>
+    <string name="suggest">意见反馈</string>
+    <string name="alarm_clock_ringing">闹钟铃声</string>
+    <string name="renewal_service">续费服务</string>
+    <string name="set_ring_xml_title">设置铃声</string>
+    <string name="account_guanli">修改密码</string>
+    <string name="user_infos">用户信息</string>
+    <string name="location_model">定位模式</string>
+    <string name="wearing_habits">佩戴习惯</string>
+    <string name="open_unwearing_remind">开启脱落提醒</string>
+    <string name="phone_no">号码</string>
+    <string name="mute_model">禁止陌生人打入电话</string>
+    <string name="body_answer">体感接听</string>
+    <string name="parent_desc">家长</string>
+    <string name="remove_from_bindind">解除绑定</string>
+    <string name="sure_to_set">确定将</string>
+    <string name="baby_age">年龄</string>
+    <string name="baby_nick_name">昵称</string>
+    <string name="edit_baby_nick_name">爱车昵称</string>
+    <string name="version">固件版本</string>
+    <string name="time_too_short">时间太短!</string>
+    <string name="sure_handle">确认提交</string>
+    <string name="lanyafangzoudiu">蓝牙防走丢</string>
+    <string name="message_tixing">消息提醒</string>
+    <string name="action_settings">Settings</string>
+    <string name="welecome_string"></string>
+    <string name="input_telphone_num">输入手机号</string>
+    <string name="please_input_num">请输入手机号码</string>
+    <string name="loading_desc">请输入登录密码</string>
+    <string name="input_is_error">输入有误</string>
+    <string name="set_password">设置密码</string>
+    <string name="please_input_password">请输入密码</string>
+    <string name="please_input_password_again">请再次输入密码</string>
+    <string name="please_input_confirm_password">请输入确认新密码</string>
+    <string name="input_password">输入密码</string>
+    <string name="input_code_has_false">输入验证码有误!</string>
+    <string name="get_code_again">重新获取</string>
+    <string name="input_code">输入验证码</string>
+    <string name="get_code">获取验证码</string>
+    <string name="study_model_add_time_desc">+添加时间段</string>
+    <string name="study_model_add_time">添加时间段</string>
+    <string name="night">夜间免打扰</string>
+    <string name="add_clock_desc">+添加新闹钟</string>
+    <string name="add_clock_desc1">添加新闹钟</string>
+    <string name="register_desc">验证码已发送到手机 : </string>
+    <string name="desc">请输入您的手机号，登入或者新建账号</string>
+    <string name="input_your_telphone">请先输入您注册用的手机号</string>
+    <string name="get_code_desc">验证码已发送到手机 0000,请注意查收</string>
+    <string name="input_new_password">输入新密码</string>
+    <string name="input_once_new_password">再次输入新密码</string>
+    <string name="connect">正在连接&#8230;</string>
+    <string name="power_off">远程关机</string>
+    <string name="get_date_fail">获取数据失败!</string>
+    <string name="bind_in">绑定于</string>
+    <string name="desc1">您的手机号已注册，可直接登录</string>
+    <string name="birthday_desc">1991&#8211;02&#8211;05</string>
+    <string name="qr_code_desc">新家长可通过扫描下方的二维码，加入家庭</string>
+    <string name="add_new_family_member_desc">添加新成员</string>
+   
+    <string name="renewal_time">服务有效期：</string>
+    <string name="_400_0518_068_"></string>
+    <string name="get_message_">接收新消息通知</string>
+    <string name="_sos_">开启夜间免打扰后，在这个时间段收到的通知将不会有声音或震动提示（SOS除外）。</string>
+    <string name="bluetooth_desc">蓝牙4.0在低功耗状态下工作时，几乎不耗电，请放心使用。</string>
+    <string name="upload_image">上传照片</string>
+    <string name="relationship_desc">关系</string>
+    <string name="change_succeed">更改成功</string>
+    <string name="operate_succeed">操作成功</string>
+    <string name="send_succeed">发送成功</string>
+    <string name="message_notify">消息通知</string>
+    <string name="delete_zone_safety">提示</string>
+    <string name="change_password_des">修改密码</string>
+    <string name="input_old_password">请输入旧密码</string>
+    <string name="edit_decs">编辑</string>
+    <string name="set_volume_title">音量设置</string>
+    <string name="left_hand">左手</string>
+    <string name="right_hand">右手</string>
+    <string name="get_code_once_desc">120s</string>
+    <string name="_86">+86</string>
+    <string name="change_admin_desc_">当前家庭只有你自己,请先邀请其他成员加入家庭.</string>
+    <string name="invite_other_members_desc">邀请家庭成员</string>
+    <string name="please_input_nick_name">请输入昵称</string>
+    <string name="please_input_new_nick_name">请输入新的昵称</string>
+    <string name="please_input_height">请输入身高</string>
+    <string name="please_input_weight">请输入体重</string>
+    <string name="no_content_edit">无任何编辑</string>
+    <string name="please_input_phone_no">请输入号码</string>
+    <string name="change_weight">更改体重</string>
+    <string name="change_phone_no">更改号码</string>
+    <string name="change_height">更改身高</string>
+    <string name="select_sex_desc">选择性别</string>
+    <string name="select_birthday_date_desc">选择日期</string>
+    <string name="give_score">去评分</string>
+    <string name="the_official_website">官方网站</string>
+    <string name="software_license_use_agreement">软件许可证使用协议</string>
+    <string name="app_version">APP版本</string>
+    <string name="_copyright"></string>
+    <string name="_new">New</string>
+    <string name="about_us_desc">关于我们</string>
+    <string name="edit_relationship">编辑关系</string>
+    <string name="add_relationship"> 添加关系 </string>
+    <string name="quit_dialog_title_desc">放弃编辑，并退出？</string>
+    <string name="target">目标</string>
+    <string name="admin">管理员</string>
+    <string name="binding_state">绑定状态</string>
+    <string name="select_new_admin">选择新管理员</string>
+    <string name="_select_admin_desc">管理员解绑自己，需先转移管理员权限，请选择新管理员：</string>
+    <string name="phone_query_cost">查询IMEI号999的话费命令已发送，请稍等(请确保当前设备处于有信号状态)。</string>
+    <string name="phone_query_traffic">查询IMEI号999的流量命令已发送，请稍等(请确保当前设备处于有信号状态)。</string>
+    <string name="imei_desc">"IMEI : "</string>
+    <string name="imei_can_not_null">imei号不能为空</string>
+    <string name="quit_dialog_save_or_not">是否保存信息？</string>
+    <string name="find_watch_desc">为了帮您快速找到设备，设备将会持续响铃1分钟</string>
+    <string name="upload_or_not">是否上传?</string>
+    <string name="please_banding_watch_first">请先绑定爱车!</string>
+    <string name="canot_find_sd_card">找不到存储路径!</string>
+    <string name="exit_reminder_desc">确定退出？</string>
+    <string name="get_watch_basics_failed">获取当前终端信息失败!!!</string>
+    <string name="upload_picture_failed">图片上传失败!!!</string>
+    <string name="upload_picture_succeed">图片上传成功</string>
+    <string name="get_pocture_failed">图像获取失败，请重新拍照!!!</string>
+    <string name="input_edit_relationship">输入自定义称呼</string>
+    <string name="edit_relation">自定义称呼</string>
+    <string name="please_select_others">不可选择自己!</string>
+    <string name="upload_failed">上传失败!</string>
+    <string name="upload_succeed">上传成功!</string>
+    <string name="loading_succeed">登陆成功!</string>
+
+    <!-- copy -->
+    <string name="bluetooth_dialogtitle">蓝牙报警：</string>
+    <string name="bluetooth_bluetoothconnecting">正在连接中…</string>
+    <string name="bluetooth_openbluefirst">请先打开列表顶端的蓝牙开关</string>
+    <string name="jpush_dialogtitle">SOS报警：</string>
+    <string name="bluetooth_blue">手机蓝牙</string>
+    <string name="server_connection_failed">服务器连接失败</string>
+    <string name="leave_family_succeed">成功离开家庭</string>
+    <string name="not_admin_can_not_set">不是管理员,无法操作</string>
+    <string name="disconnect_desc">已断开连接</string>
+    <string name="is_quit">正在退出 &#8230;</string>
+    <string name="bluetooth_is_disconnected">正在断开连接 &#8230;</string>
+    <string name="bluetooth_is_reconnecting">正在重新连接&#8230;</string>
+    <string name="bluetooth_is_scanning">正在扫描&#8230;</string>
+    <string name="bluetooth_is_closed_desc">正在关闭蓝牙&#8230;</string>
+    <string name="bluetooth_close_failed">关闭蓝牙失败</string>
+    <string name="bluetooth_is_opening">正在打开蓝牙&#8230;</string>
+    <string name="bluetooth_open_failed">启动蓝牙失败</string>
+    <string name="bluetooth_is_connecting">正在连接&#8230;</string>
+    <string name="start_record_failed">启动录音失败!</string>
+    <string name="file_is_lost">本地文件已缺失，无法发送语音!</string>
+
+    <!-- 服务器连接失败 -->
+    <string name="query_phone_flow">查流量</string>
+    <string name="query_phone_fee">查话费</string>
+    <string name="details_of_mine">我的详情</string>
+    <string name="details_of_others">成员详情</string>
+    <string name="the_relationship_with_baby_1">我是宝宝的</string>
+    <string name="the_relationship_with_baby_2">他(她)是宝宝的</string>
+    <string name="quit_family">退出家庭</string>
+    <string name="remove_from_family">移出家庭</string>
+    <string name="remove_from_family_succeed">成功移出家庭</string>
+    <string name="change_admin">变更管理员</string>
+    <string name="as_the_family_number">设为亲情号码</string>
+    <string name="family_number">亲情号码</string>
+    <string name="delete_guy">删除小伙伴</string>
+    <string name="delete_guy_succeed">删除小伙伴成功</string>
+    <string name="has_reward_to_baby">已奖励宝贝0朵小红花</string>
+    <string name="set_succeed">设置成功</string>
+    <string name="save_succeed">保存成功</string>
+    <string name="quick_to_reward_a_red">快给宝贝奖励一朵小红花吧</string>
+    <string name="location_model_normal">正常模式</string>
+    <string name="location_model_power_saving_mode">省电模式</string>
+    <string name="the_brightness_settings">亮度设值</string>
+    <string name="baby_desc">宝宝</string>
+    <string name="preference_default_tts_role">xiaoyan</string>
+    <string name="preference_key_tts_speed">tts_speed</string>
+    <string name="preference_key_tts_volume">tts_volume</string>
+    <string name="preference_key_tts_pitch">tts_pitch</string>
+    <string name="input_baby_phone_num">请输入手机号</string>
+    <string name="press_to_edit_desc">点击编辑按钮进行编辑!</string>
+    <string name="network_location">WIFI定位</string>
+    <string name="duration_of_stay">停留时间:</string>
+    <string name="gps_location">GPS定位</string>
+    <string name="voice_send_failed">语音发送失败！</string>
+    <string name="wake_up_desc">起床</string>
+    <string name="sleep_desc">睡觉</string>
+    <string name="flowers_num">小红花数量</string>
+    <string name="reward_content">奖励内容</string>
+    <string name="set_goal_desv">目标设置</string>
+    <string name="navi_empty_car">"驾   车"</string>
+    <string name="navi_empty_foot">"步   行"</string>
+    <string name="close">关闭</string>
+    <string name="app_id">输入您讯飞的appid</string>
+    <string name="mypoistion">我的位置</string>
+    <string name="mappoistion">地图点选</string>
+    <string name="positioninfo">位置信息</string>
+    <string name="sure_delete">确定删除？</string>
+    <string name="send_succeed_and_wait_a_moment">发送成功，请稍等....</string>
+    <string name="get_other_baby_phone_message_desc">收到其他宝贝话费信息，请点开通知查看</string>
+    <string name="download_succeed">下载成功</string>
+    <string name="download">下载</string>
+    <string name="map_is_download">地图已下载</string>
+    <string name="map_is_decompressed">正在解压:</string>
+    <string name="map_is_downloading">正在下载:</string>
+    <string name="map_is_downloading_hold_on">正在下载中，请稍候&#8230;</string>
+    <string name="map_the_national_profile_chart">全国概要图</string>
+    <string name="map_macau">澳门</string>
+    <string name="map_hong_kong">香港</string>
+    <string name="map_hong_kong_and_macao">港澳</string>
+    <string name="map_zhixiashi">直辖市</string>
+    <string name="map_schematic">概要图</string>
+    <string name="information_has_hand_in">信息已提交完成!</string>
+    <string name="please_input_suggestion">请输入意见或者建议!</string>
+    <string name="set_award_content">设置奖励内容</string>
+    <string name="award_content_can_not_null">奖励内容不能为空!</string>
+    <string name="input_content_can_not_null">编辑框不可为空!</string>
+    <string name="input_succeeful_relationship">请输入正确称呼!</string>
+    <string name="input_relationship_named">输入称呼</string>
+    <string name="please_select_model">请选择一种模式!</string>
+    <string name="get_qr_code_failed">生成二维码失败!</string>
+    <string name="sim_can_not_null">Sim号不能为空</string>
+    <string name="udate_app">存在新版本，是否更新？</string>
+    <string name="udate_failed">更新出错,请稍后再进行更新!</string>
+    <string name="is_udate_app">正在下载</string>
+    <string name="lbs_location"> 模糊定位 </string>
+    <string name="quit_and_reloading"> 确定退出登录？ </string>
+    <string name="clear_desc"> 清空 </string>
+    <string name="select_time_desc"> 选择时间段 </string>
+    <string name="camera"> 照相机</string>
+    <string name="change_icon_desc"> 更换头像</string>
+    <string name="local_album"> 本地相簿</string>
+    <string name="update_has_unknown_error"> 更新过程中出现未知错误,请稍后再试!</string>
+    <string name="latest_version"> 当前已是最新版本</string>
+    <string name="no_version_info"> 无相关版本信息</string>
+    <string name="get_location_info_error"> 获取当前设备或手机地理位置出错</string>
+    <string name="get_phone_location_info_error"> 获取手机位置失败!</string>
+    <string name="bind_succeed"> 绑定成功</string>
+    <string name="please_confirm_info"> 请认真确认:</string>
+    <string name="start_use_the_app"> 万事俱备，开始使用</string>
+    <string name="location_mode_desc">定位类型说明</string>
+    <string name="location_model_gps">GPS定位说明</string>
+    <string name="location_model_gps_desc">GPS模块利用美国卫星导航定位系统进行设备定位，室外空旷地，定位精度最佳可达10米左右，缺点是室内定位效果不佳。</string>
+    <string name="location_model_wifi">WIFI定位说明</string>
+    <string name="location_model_wifi_desc">设备通过WIFI模块，收集周边WIFI热点信息，来计算自身的位置信息，定位精度最佳在50米以内。</string>
+    <string name="location_model_base_station">模糊定位说明</string>
+    <string name="location_model_base_station_desc">设备通过电信移动运营商的网络（如GSM网），获取自身的位置信息，定位的精准度一般是500米以内。</string>
+    <string name="location_model_select_desc">系统会根据场景，自动选择合适的方式。</string>
+    <string name="unbind_all_warning_title">警告，为避免您的信息泄露，请您：</string>
+    <string name="unbind_all_warning_desc">1、保证设备开机并且能正常通讯。\n2、等待设备自动重启后，确认设备联系人清空。\n3、最后关机再拔出电话卡。\n4、解绑后，设备联系人及使用数据将全部清空，是否确定解绑？</string>
+    <string name="unbind_myself_warning">当家庭组中只有您个人时，如需解绑个人可直接进行解散家庭操作。</string>
+    <string name="no_baby_history_info">当前暂无宝贝历史记录!</string>
+    <string name="location_layers_model_1">标准地图</string>
+    <string name="location_layers_model_2">卫星地图</string>
+    <string name="first_install_guide_desc">请点击头像，添加爱车</string>
+    <string name="i_know">知道了</string>
+    <string name="please_input_apn">请输入APN</string>
+    <string name="set_apn_title_desc">接入点名称设置</string>
+    <string name="apn">APN</string>
+    <string name="username">用户名</string>
+    <string name="password">密码</string>
+    <string name="apn_desc">输入APN名称</string>
+    <string name="username_desc">输入用户名</string>
+    <string name="password_desc">输入密码</string>
+    <string name="set_apn_fail">设置APN失败,留待以后再设置？</string>
+    <string name="set_apn_fail_no_sim"> sim卡没插入或者sim卡暂时不可用,是否留待以后再设置？</string>
+    <string name="acount_set_apn_fail">设置APN失败</string>
+    <string name="acount_set_apn_fail_no_sim"> sim卡没插入或者sim卡暂时不可用</string>
+    <string name="location_security_guard">安全守护</string>
+    <string name="input_watch_imei">输入IMEI号</string>
+    <string name="set_zone_succeed">设置时区成功</string>
+    <string name="set_zone_fail">设置时区失败</string>
+    <string name="set_zone">设置时区</string>
+    <string name="today">今天</string>
+    <string name="ring_model_can_not_change_desc">铃声模式下,震动不可取消!</string>
+    <string name="study_start_time_desc">上课时间</string>
+    <string name="study_class_over_time">下课时间</string>
+    <string name="week_desc">星期</string>
+    <string name="attention_desc">注意:</string>
+    <string name="am_desc">上午</string>
+    <string name="pm_desc">下午</string>
+    <string name="night_desc">晚自习</string>
+    <string name="open_study_model_desc">开启上课禁用</string>
+    <string name="close_study_model_desc">关闭上课禁用</string>
+    <string name="study_model_closed_desc">未开启功能</string>
+    <string name="study_model_opened_desc">已开启功能</string>
+    <string name="cancel_desc">取消</string>
+    <string name="everyday_desc">每天</string>
+    <string name="monday_to_friday_desc">周一至周五</string>
+    <string name="phone_contacts_desc">手机通讯录</string>
+    <string name="hour_desc">时</string>
+    <string name="minute_desc">分</string>
+    <string name="bluetooth_alarm_desc">宝贝蓝牙已断开连接，请确认宝贝是否已走丢!</string>
+    <string name="am_eight_clock_desc">08:00</string>
+    <string name="am_eleven_clock_desc">11:30</string>
+    <string name="pm_two_clock_desc">14:00</string>
+    <string name="pm_four_clock_desc">16:30</string>
+    <string name="pm_six_clock_desc">18:00</string>
+    <string name="pm_nine_clock_desc">21:30</string>
+
+    <string-array name="relationship">
+        <item>爸爸</item>
+        <item>妈妈</item>
+        <item>爷爷</item>
+        <item>奶奶</item>
+        <item>叔叔</item>
+        <item>阿姨</item>
+        <item>外公</item>
+        <item>外婆</item>
+        <item>哥哥</item>
+        <item>姐姐</item>
+        <item>自定义</item>
+    </string-array>
+    <string-array name="alarmClock">
+        <item>起床</item>
+        <item>睡觉</item>
+        <item>自定义</item>
+    </string-array>
+    <string-array name="days">
+        <item>周日</item>
+        <item>周一</item>
+        <item>周二</item>
+        <item>周三</item>
+        <item>周四</item>
+        <item>周五</item>
+        <item>周六</item>
+    </string-array>
+    <string-array name="silence_time_array">
+        <item>00:00</item>
+        <item>01:00</item>
+        <item>02:00</item>
+        <item>03:00</item>
+        <item>04:00</item>
+        <item>05:00</item>
+        <item>06:00</item>
+        <item>07:00</item>
+        <item>08:00</item>
+        <item>09:00</item>
+        <item>10:00</item>
+        <item>11:00</item>
+        <item>12:00</item>
+        <item>13:00</item>
+        <item>14:00</item>
+        <item>15:00</item>
+        <item>16:00</item>
+        <item>17:00</item>
+        <item>18:00</item>
+        <item>19:00</item>
+        <item>20:00</item>
+        <item>21:00</item>
+        <item>22:00</item>
+        <item>23:00</item>
+    </string-array>
+    <string-array name="hour">
+        <item>00</item>
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>05</item>
+        <item>06</item>
+        <item>07</item>
+        <item>08</item>
+        <item>09</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+    </string-array>
+    <string-array name="mins">
+        <item>00</item>
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>05</item>
+        <item>06</item>
+        <item>07</item>
+        <item>08</item>
+        <item>09</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+        <item>32</item>
+        <item>33</item>
+        <item>34</item>
+        <item>35</item>
+        <item>36</item>
+        <item>37</item>
+        <item>38</item>
+        <item>39</item>
+        <item>40</item>
+        <item>41</item>
+        <item>42</item>
+        <item>43</item>
+        <item>44</item>
+        <item>45</item>
+        <item>46</item>
+        <item>47</item>
+        <item>48</item>
+        <item>49</item>
+        <item>50</item>
+        <item>51</item>
+        <item>52</item>
+        <item>53</item>
+        <item>54</item>
+        <item>55</item>
+        <item>56</item>
+        <item>57</item>
+        <item>58</item>
+        <item>59</item>
+    </string-array>
+
+</resources>

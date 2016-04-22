@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_alertdialog"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@null"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/edit_safety_name_cancel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/dialog_negative"
+            android:textColor="@color/color_6"
+            android:textSize="@dimen/textstyle_content" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="center"
+            android:text="@string/domainname"
+            android:textColor="@color/color_6"
+            android:textSize="@dimen/textstyle_title" />
+
+        <Button
+            android:id="@+id/edit_safety_name_sure"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="center"
+            android:text="@string/dialog_positive"
+            android:textColor="@color/color_6"
+            android:textSize="@dimen/textstyle_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@null"
+        android:orientation="vertical"
+        android:padding="15dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/edit_safety_name_family"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_press_round_rectangle_gray_and_blue"
+                android:text="@string/home"
+                android:textColor="@color/color_6"
+                android:textSize="@dimen/textstyle_content" />
+
+            <Button
+                android:id="@+id/edit_safety_name_school"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_press_round_rectangle_gray_and_blue"
+                android:text="@string/xuexiao"
+                android:textColor="@color/color_6"
+                android:textSize="@dimen/textstyle_content" />
+
+            <Button
+                android:id="@+id/edit_safety_name_company"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|left"
+                android:layout_weight="1"
+                android:background="@drawable/selector_press_round_rectangle_gray_and_blue"
+                android:text="@string/firm"
+                android:textColor="@color/color_6"
+                android:textSize="@dimen/textstyle_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/edit_safety_name_grandpa_home"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_press_round_rectangle_gray_and_blue"
+                android:text="@string/grandpahome"
+                android:textColor="@color/color_6"
+                android:textSize="@dimen/textstyle_content" />
+
+            <Button
+                android:id="@+id/edit_safety_name_teacher_home"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_press_round_rectangle_gray_and_blue"
+                android:text="@string/teacherhome"
+                android:textColor="@color/color_6"
+                android:textSize="@dimen/textstyle_content" />
+
+            <Button
+                android:id="@+id/edit_safety_name_cram_school"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|left"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_press_round_rectangle_gray_and_blue"
+                android:text="@string/cramschool"
+                android:textColor="@color/color_6"
+                android:textSize="@dimen/textstyle_content" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/edit_safety_name_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/color_9"
+            android:cursorVisible="true"
+            android:hint="@string/please"
+            android:paddingLeft="15dp"
+            android:textColor="@color/color_6"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/textstyle_content" />
+    </LinearLayout>
+
+</LinearLayout>

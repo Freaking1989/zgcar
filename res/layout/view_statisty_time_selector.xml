@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_10"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="15dp" >
+
+    <RadioGroup
+        android:id="@+id/view_statisty_time_selector_radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <RadioButton
+            android:id="@+id/view_statisty_time_selector_radio0"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:checked="true"
+            android:text="今天"
+            android:textColor="@color/color_6" />
+
+        <RadioButton
+            android:id="@+id/view_statisty_time_selector_radio1"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="昨天"
+            android:textColor="@color/color_6" />
+
+        <RadioButton
+            android:id="@+id/view_statisty_time_selector_radio2"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="前天"
+            android:textColor="@color/color_6" />
+
+        <RadioButton
+            android:id="@+id/view_statisty_time_selector_radio3"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="自定义"
+            android:textColor="@color/color_6" />
+    </RadioGroup>
+
+</RelativeLayout>

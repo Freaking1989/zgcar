@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_10"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/color_11"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/popwindow_birthday_negative"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:text="@string/dialog_negative"
+            android:textColor="@drawable/selector_popwindows_textcolor"
+            android:textSize="@dimen/textstyle_content" />
+
+        <TextView
+            style="@style/TextContentTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:gravity="center"
+            android:textColor="@color/color_6"
+            android:textSize="@dimen/textstyle_title"
+            android:text="@string/select_birthday_date_desc" />
+
+        <Button
+            android:id="@+id/popwindow_birthday_positive"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:text="@string/dialog_positive"
+            android:textColor="@drawable/selector_popwindows_textcolor"
+            android:textSize="@dimen/textstyle_content" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/color_9" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal" >
+
+        <com.zgcar.com.wheelview.WheelView
+            android:id="@+id/popwindow_birthday_year"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:paddingLeft="50dp" />
+
+        <com.zgcar.com.wheelview.WheelView
+            android:id="@+id/popwindow_birthday_month"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:background="@null" />
+
+        <com.zgcar.com.wheelview.WheelView
+            android:id="@+id/popwindow_birthday_day"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null" />
+    </LinearLayout>
+
+</LinearLayout>

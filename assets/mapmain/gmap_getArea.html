@@ -1,0 +1,325 @@
+
+<html xmlns='http://www.w3.org/1999/xhtml' xmlns:v='urn:schemas-microsoft-com:vml'>
+<head>
+<meta http-equiv='content-type' content='text/html; charset=utf-8'/>
+<title></title>
+<style type='text/css'>
+.icon{left:0px;top:0px;border:0;padding:0;margin:0;position:absolute;}
+.label{border:1px solid #cc7600;padding:0 3 0 3;left:28px;top:8px;position:absolute;color:#333333;background-color:#fffebe;font-size:12px;text-align:left;}
+</style>
+<script type='text/javascript' src='json.js'></script>
+<script type='text/javascript'>
+function _Get(id) { return document.getElementById(id); }
+function _SetT(id, t) { _Get(id).innerText = t; }
+function _SetH(id, h) { _Get(id).innerHTML = h; }
+function _SetClass(id, c) { _Get(id).className = c; }
+function _Hide(id) { _Get(id).style.display = 'none'; }
+function _Show(id) { _Get(id).style.display = ''; }
+function _Goto(url) { window.location.href = url; }
+function _Open(url) { window.open(url, '_blank'); }
+function _Out(html) { document.write(html); }
+
+var map = null;
+var geocoder = null;
+var findMarker;
+var lowVer = 0;
+function _RSE_Map() {_Show('divReload');map = null;return true;}
+function _RSE_Act() {var msg='';for(var i=0;i<arguments.length;i++){msg+='\n'+(i+1)+'閿涳拷'+arguments[i];}alert(msg);return true;}
+
+var S1 = '|', S2 = '^', S3 = '$';
+
+//图标路径、默认比例、默认经度、默认纬度、正常线条颜色、超速线条颜色、报警线条颜色、线条宽度
+var _PATH = 'images\\map\\';
+var _MAP_Lv = 4;
+var _MAP_Lo = 108.569281;
+var _MAP_La = 36.668265;
+var _pn='#0000FF',_ps='#FF8C00',_pa='#FF0000',_pl=3;
+//轨迹起点、轨迹结束、地图错误、重新载入地图、版本过低
+var _LINE_S = '轨迹开始';
+var _LINE_E = '轨迹结束';
+var _ERR_m1 = '地图载入失败';
+var _ERR_m2 = '重新载入';
+
+function Init() {
+  var b_version = navigator.appVersion
+  var version = b_version.split(';');
+  var trim_Version = version[1].replace(/[ ]/g, '');
+  if(trim_Version == 'MSIE6.0' || trim_Version == 'MSIE5.5' || trim_Version == 'MSIE5.0'){lowVer=1;}
+}
+Init();
+window.onerror = _RSE_Map;
+</script>
+</head>
+<body style='margin:0px;padding:0px;width:100%;height:100%;font-size:12px;overflow:hidden;'>
+<div id='divReload' style='width:100%;height:100%;font-size:14px;display:none;'>
+ <p style='position:absolute;top:50%;left:50%;width:400px;height:30px;margin:-15px 0 0 -200px;text-align:center;'>
+ <script type='text/javascript'>_Out(_ERR_m1);</script>,
+ <a href='javascript:window.external.MapRefresh();'><script type='text/javascript'>_Out(_ERR_m2);</script></a></p>
+</div>
+<div id='divMap' style='width:100%;height:100%;'></div>
+</body>
+<script type='text/javascript' src='http://ditu.google.cn/maps/api/js?sensor=false&region=CN&language=en'></script>
+<script type='text/javascript'>
+var _PO_N = { strokeColor: _pn, strokeOpacity: 1.0, strokeWeight: _pl };
+var _PO_S = { strokeColor: _ps, strokeOpacity: 1.0, strokeWeight: _pl };
+var _PO_A = { strokeColor: _pa, strokeOpacity: 1.0, strokeWeight: _pl };
+/////////////////////////鍦板浘鏇存崲/////////////////////////
+var minLo = 0, maxLo = 0, minLa = 0, maxLa = 0, cenLo = 0, cenLa = 0;
+function InitMap() {
+  var myOptions = {
+    zoom:_MAP_Lv-0,
+    center: new google.maps.LatLng(_MAP_La, _MAP_Lo),
+    mapTypeControl: true,
+    mapTypeControlOptions: { style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+    zoomControl: true,
+    mapTypeId: google.maps.MapTypeId.ROADMAP}
+ map = new google.maps.Map(_Get('divMap'), myOptions);
+ google.maps.event.addListener(map, 'bounds_changed', function () {
+  var mapBD = map.getBounds();
+  var dot1 = mapBD.getNorthEast(), dot2 = mapBD.getSouthWest();
+  minLo = dot2.lng();
+  maxLo = dot1.lng();
+  minLa = dot2.lat();
+  maxLa = dot1.lat();
+  cenLo = (minLo + maxLo) / 2;
+  cenLa = (minLa + maxLa) / 2;
+ });
+ geocoder = new google.maps.Geocoder();
+}
+function getNormalizedCoord(coord, zoom){
+ var y = coord.y;
+ var x = coord.x;
+ var tileRange = 1 << zoom;
+ if(y < 0 || y >= tileRange){return null;}
+ if(x < 0 || x >= tileRange){x = (x % tileRange + tileRange) % tileRange;}
+ return { x: x, y: y };
+}
+function FindAddr(addr){
+ geocoder.geocode( { 'address': addr}, 
+  function(results, status){
+   if(status==google.maps.GeocoderStatus.OK){
+    map.setCenter(results[0].geometry.location);
+    findMarker = new google.maps.Marker({map: map,position: results[0].geometry.location});
+   }
+   else{alert('Not found:' + status);}
+  });
+}
+
+function ShowAddress(addr)
+{
+    geocoder.geocode({ 'address': addr }, function (results, status) {
+        if (status == google.maps.GeocoderStatus.OK) 
+        {
+        	map.setCenter(results[0].geometry.location);
+         	map.setZoom(14);
+	        /**/
+	        for(var i=0;i<results.length;i++)
+	        {
+	   			
+	            var TmepfindMarker=new google.maps.Marker({map:map,position:results[i].geometry.location});
+	            	//alert(results[i].formatted_address);//
+	            //displayProp(results[i].geometry);
+	            
+	          //  alert(results[i].geometry.location);
+	            
+	        }
+	         var str = JSON.stringify(results);
+	         //alert(str);
+        	window.jsobj.reciverList(str);
+        	
+        } else {
+           // alert('No Find'+ addr + 'this location');
+        }
+    });
+}
+//杈撳嚭
+function displayProp(obj){      
+        var names="";         
+        for(var name in obj){         
+           names+=name+": "+obj[name]+", ";    
+        }    
+        alert(names);    
+    } 
+function FindClear(){
+  findMarker.setMap(null);
+  findMarker=null;
+}
+function Pos(id, lo, la, file, imgType, label, addon) {
+ this.ID = id;
+ this.Lo = lo;
+ this.La = la;
+
+ this.ag_ = file;
+ this.ad_ = addon;
+ this.imgTp_ = imgType;
+ this.Mark = null;
+ this.Addon = null;
+ this.Label = null;
+
+ this.point_ = new google.maps.LatLng(la, lo);
+ this.txt_ = label;
+ this.div_ = null;
+ this.map_ = map;
+ this.setMap(map);
+}
+Pos.prototype = new google.maps.OverlayView();
+Pos.prototype.onAdd = function () {
+ var id = this.ID;
+ var div = document.createElement('div');
+ div.style.border = '0';
+ div.style.position = 'absolute';
+ div.style.padding = '0'
+ div.style.cursor = 'pointer';
+ div.style.whiteSpace = 'nowrap';
+ div.onclick = function (){window.external.J_PosClick(id);}
+
+ this.Mark = document.createElement('img');
+ if(this.imgTp_ == 1)
+  this.Mark.src = _PATH + this.ag_ + '.gif';
+ else this.Mark.src = _PATH + this.ag_ + '.png';
+ this.Mark.style.width = '32';
+ this.Mark.style.height = '32';
+ div.appendChild(this.Mark);
+
+ if (this.ad_ == 1){
+  this.Addon = document.createElement('img');
+  this.Addon.className = 'icon';
+  this.Addon.src = _PATH + 'off.png';
+  this.Addon.style.width = '32';
+  this.Addon.style.height = '32';
+  div.appendChild(this.Addon);
+ }
+ else if (this.ad_ == 2){
+  this.Addon = document.createElement('img');
+  this.Addon.className = 'icon';
+  this.Addon.src = _PATH + 'alarm.gif';
+  this.Addon.style.width = '32';
+  this.Addon.style.height = '32';
+  div.appendChild(this.Addon);
+ }
+
+ if (this.txt_ != ''){
+  this.Label = document.createElement('p');
+  this.Label.className = 'label';
+  this.Label.innerHTML = this.txt_;
+  div.appendChild(this.Label);
+ }
+ this.map_ = map;
+ this.div_ = div;
+ var panes = this.getPanes();
+ panes.overlayLayer.appendChild(div);
+}
+Pos.prototype.draw = function () {
+ var overlayProjection = this.getProjection();
+ var div = this.div_;
+ var c = overlayProjection.fromLatLngToDivPixel(this.point_);
+ div.style.left = (c.x - 16) + 'px';
+ div.style.top = (c.y - 16) + 'px';
+}
+Pos.prototype.onRemove = function () {
+ if (this.Mark != null) {
+  this.div_.removeChild(this.Mark);
+  this.Mark = null;
+ }
+ if (this.Addon != null) {
+  this.div_.removeChild(this.Addon);
+  this.Addon = null;
+ }
+ if (this.Label != null) {
+  this.div_.removeChild(this.Label);
+  this.Label = null;
+ }
+ this.div_.parentNode.removeChild(this.div_);
+ this.div_ = null;
+}
+function MapCenter(lo,la,zoom){
+  map.setZoom(zoom-0);
+  map.setCenter(new google.maps.LatLng(la,lo));
+}
+function MapGoto(lo,la){
+ if(lo>maxLo || lo<minLo || la>maxLa || la<minLa)
+  map.setCenter(new google.maps.LatLng(la,lo));
+}
+InitMap();
+window.onerror = _RSE_Act;
+
+var area = null;
+function DrawCircle(lo, la, rg) {
+ area = new google.maps.Circle({strokeColor: '#FF0000',
+  strokeOpacity: 1,
+  strokeWeight: 2,
+  fillColor: '#FF0000',
+  fillOpacity: 0.30,
+  map: map,
+  center: new google.maps.LatLng(la, lo),
+  radius: rg-0});
+}
+function DrawRect(lo1, la1, lo2, la2) {
+ area = new google.maps.Rectangle();
+ area.setOptions({
+  strokeColor: '#FF0000',
+  strokeColor: '#FF0000',
+  strokeOpacity: 1,
+  strokeWeight: 2,
+  fillColor: '#FF0000',
+  fillOpacity: 0.30,
+  map: map,
+  bounds: new google.maps.LatLngBounds(new google.maps.LatLng(la1, lo1), new google.maps.LatLng(la2, lo2)) });
+}
+function DrawPoly(pts) {
+ area = new google.maps.Polygon({  
+  paths: pts,
+  strokeColor: '#FF0000',
+  strokeOpacity: 0.8,
+  strokeWeight: 2,
+  fillColor: '#FF0000',
+  fillOpacity: 0.35   });
+ area.setMap(map);
+}
+function DrawPolyline(pts) {
+ area = new google.maps.Polyline({  
+  path: pts,
+  strokeColor: '#FF0000',
+  strokeOpacity: 1.0,
+  strokeWeight: 2   });
+ area.setMap(map);
+}
+function Draw(type, pts, range, fill){
+ Clear();
+ if(type == 0){
+  var list = pts.split(S1);
+  DrawCircle(list[0], list[1], range);
+ }
+ else if(type == 1){
+  var list = pts.split(S1);
+  DrawRect(list[0], list[1], list[2], list[3]);
+ }
+ else if(type == 2){
+  var list = pts.split(S1);
+  var ptstr = new Array();
+  for(var i=0; i<list.length-1; i+=2)
+   ptstr.push(new google.maps.LatLng(list[i+1], list[i]));
+  if(fill==1 || list.length==2)
+   DrawPoly(ptstr);
+  else DrawPolyline(ptstr);
+ }
+}
+function Clear(){
+ if(area != null)
+ {
+  area.setMap(null);
+  area = null;
+ }
+}
+
+
+
+
+google.maps.event.addListener(map, 'click', function(event){
+alert(event.latLng.lng()+","+event.latLng.lat());
+//window.external.SetPoint(event.latLng.lng(),event.latLng.lat());
+}
+);
+//alert('weidinyi');
+</script>
+</html>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:background="@drawable/shape_alertdialog"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/view_input_phone_num_title"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:gravity="center"
+        android:text="@string/telphone_num_desc"
+        android:textColor="@color/color_6"
+        android:textSize="@dimen/textstyle_title" />
+
+    <EditText
+        android:id="@+id/view_input_phone_num_editteext"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@id/view_input_phone_num_title"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/shape_loading_edittext"
+        android:cursorVisible="true"
+        android:gravity="center_vertical"
+        android:hint=""
+        android:inputType="phone"
+        android:maxLength="100"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:singleLine="true"
+        android:textColor="@color/color_6"
+        android:textCursorDrawable="@null"
+        android:textSize="@dimen/textstyle_content" />
+
+    <Button
+        android:id="@+id/view_input_phone_num_sysytem_num"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/view_input_phone_num_editteext"
+        android:layout_marginBottom="2dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="2dp"
+        android:background="@android:color/transparent"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="@string/phone_contacts_desc"
+        android:textColor="@drawable/selector_textcolor_red_and_blue"
+        android:textSize="@dimen/textstyle_desc" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@id/view_input_phone_num_sysytem_num"
+        android:background="@color/color_9" >
+    </View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@id/view_input_phone_num_sysytem_num"
+        android:layout_marginTop="1dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/view_input_phone_num_negative_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:text="@string/dialog_negative"
+            android:textColor="@drawable/selector_view_dialog_textcolor"
+            android:textSize="@dimen/textstyle_content" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="@color/color_9" >
+        </View>
+
+        <Button
+            android:id="@+id/view_input_phone_num_positive_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:text="@string/dialog_positive"
+            android:textColor="@drawable/selector_view_dialog_textcolor"
+            android:textSize="@dimen/textstyle_content" />
+    </LinearLayout>
+
+</RelativeLayout>
