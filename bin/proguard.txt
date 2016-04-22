@@ -357,7 +357,11 @@
 -keep class com.zgcar.com.util.KCalendar { <init>(...); }
 
 # view res/layout/activity_message_warn.xml #generated:131
+<<<<<<< HEAD
 # view res/layout/activity_show_history_info.xml #generated:133
+=======
+# view res/layout/activity_show_history_info.xml #generated:132
+>>>>>>> origin/master
 # view res/layout/activity_show_history_info.xml #generated:162
 # view res/layout/fragment_location.xml #generated:348
 # view res/layout/fragment_location.xml #generated:379
