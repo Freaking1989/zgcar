@@ -219,6 +219,8 @@ public class ActivityAboutApp extends Activity implements OnClickListener,
 	}
 
 	private void dismissDialog() {
+
+		// hello
 		if (dialog != null && dialog.isShowing()) {
 			dialog.dismiss();
 		}
