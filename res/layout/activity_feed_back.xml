@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_10"
@@ -8,6 +8,7 @@
     android:orientation="vertical" >
 
     <RelativeLayout
+        android:id="@+id/feed_back_title_layout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/app_title_height" >
 
@@ -31,48 +32,50 @@
             android:src="@drawable/selector_back_img_ib" />
     </RelativeLayout>
 
+    <TextView
+        android:id="@+id/feed_back_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="@string/_400_0518_068_"
+        android:textColor="@color/color_8"
+        android:textSize="@dimen/textstyle_content" />
 
-        <EditText
-            android:id="@+id/feed_back_content"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginBottom="15dp"
-            android:layout_marginLeft="@dimen/left_margin"
-            android:layout_marginRight="15dp"
-            android:layout_marginTop="15dp"
-            android:layout_weight="0.5"
-            android:background="@drawable/selector_feedback_edittext"
-            android:gravity="top"
-            android:hint=""
-            android:maxLength="300"
-            android:paddingBottom="15dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:paddingTop="15dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/color_8"
-            android:textSize="@dimen/textstyle_content" />
+    <Button
+        android:id="@+id/feed_back_submit"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_above="@+id/feed_back_desc"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/selector_next_button"
+        android:text="@string/sure_handle"
+        android:textColor="@drawable/selector_next_color"
+        android:textSize="@dimen/textstyle_content" />
 
+    <EditText
+        android:id="@+id/feed_back_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/feed_back_submit"
+        android:layout_below="@+id/feed_back_title_layout"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="@dimen/left_margin"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/selector_feedback_edittext"
+        android:gravity="top"
+        android:hint=""
+        android:maxLength="300"
+        android:paddingBottom="15dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="15dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/color_8"
+        android:textSize="@dimen/textstyle_content" />
 
-            <Button
-                android:id="@+id/feed_back_submit"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:background="@drawable/selector_next_button"
-                android:text="@string/sure_handle"
-                android:textColor="@drawable/selector_next_color"
-                android:textSize="@dimen/textstyle_content" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="8dp"
-                android:gravity="center"
-                android:text="@string/_400_0518_068_"
-                android:textColor="@color/color_8"
-                android:textSize="@dimen/textstyle_content" />
-
-</LinearLayout>
+</RelativeLayout>
