@@ -7,8 +7,6 @@ import java.util.List;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -37,7 +35,6 @@ import com.amap.api.maps.offlinemap.OfflineMapStatus;
 import com.zgcar.com.R;
 import com.zgcar.com.util.Quit;
 import com.zgcar.com.util.SetTitleBackground;
-import com.zgcar.com.util.Util;
 
 /**
  * AMapV2地图中简单介绍离线地图下载
@@ -204,13 +201,11 @@ public class ActivityOfflineProvince extends Activity implements
 							}
 						}
 					} else {
-						Util.showToastBottom(ActivityOfflineProvince.this,
-								getString(R.string.map_is_downloading_hold_on));
+						// Util.showToastBottom(ActivityOfflineProvince.this,
+						// getString(R.string.map_is_downloading_hold_on));
 						if (ActivityOfflineProvince.this.groupPosition == groupPosition
 								&& ActivityOfflineProvince.this.childPosition == childPosition) {
 							isStart = false;
-							groupPosition = -1;
-							childPosition = -1;
 							amapManager.stop();
 						}
 						return false;
@@ -449,35 +444,28 @@ public class ActivityOfflineProvince extends Activity implements
 	 */
 	@Override
 	public void onDownload(int status, int completeCode, String downName) {
-		handler.removeCallbacks(runnable);
 		cityName = downName;
 		changeOfflineMapTitle(status, downName);
 		switch (status) {
 		case OfflineMapStatus.SUCCESS:
-			amapManager.stop();
-			handler.postDelayed(runnable, 1000);
-			changeOfflineMapTitle(OfflineMapStatus.SUCCESS, downName);
+			isStart = false;
 			break;
 		case OfflineMapStatus.LOADING:
 			ActivityOfflineProvince.this.completeCode = completeCode;
 			break;
 		case OfflineMapStatus.UNZIP:
 			ActivityOfflineProvince.this.completeCode = completeCode;
-			changeOfflineMapTitle(OfflineMapStatus.UNZIP, downName);
 			break;
 		case OfflineMapStatus.WAITING:
 			break;
 		case OfflineMapStatus.PAUSE:
-			groupPosition = -1;
-			childPosition = -1;
 			isStart = false;
 			break;
 		case OfflineMapStatus.STOP:
-			groupPosition = -1;
-			childPosition = -1;
 			isStart = false;
 			break;
 		case OfflineMapStatus.CHECKUPDATES:// return "检查更新状态";
+			isStart = false;
 			break;
 
 		// case OfflineMapStatus.ERROR:// return "下载失败";
@@ -506,35 +494,15 @@ public class ActivityOfflineProvince extends Activity implements
 		// break;
 
 		case OfflineMapStatus.START_DOWNLOAD_FAILD:// return "开始下载失败，已下载该城市地图";
-			handler.postDelayed(runnable, 1000);
-			break;
-		default:
-			groupPosition = -1;
-			childPosition = -1;
 			isStart = false;
 			break;
-
+		default:
+			isStart = false;
+			break;
 		}
 		((BaseExpandableListAdapter) adapter).notifyDataSetChanged();
 
 	}
-
-	private Runnable runnable = new Runnable() {
-		@Override
-		public void run() {
-			handler.sendMessage(handler.obtainMessage(0));
-		}
-	};
-
-	private Handler handler = new Handler() {
-		@Override
-		public void handleMessage(Message msg) {
-			groupPosition = -1;
-			childPosition = -1;
-			isStart = false;
-			super.handleMessage(msg);
-		}
-	};
 
 	/**
 	 * 更改离线地图下载状态文字
@@ -595,7 +563,6 @@ public class ActivityOfflineProvince extends Activity implements
 		switch (arg0.getId()) {
 		case R.id.account_offline_province_back:
 			amapManager.stop();
-			handler.removeCallbacksAndMessages(null);
 			finish();
 			break;
 
@@ -609,7 +576,6 @@ public class ActivityOfflineProvince extends Activity implements
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK) {
 			amapManager.stop();
-			handler.removeCallbacksAndMessages(null);
 			finish();
 			return false;
 		}

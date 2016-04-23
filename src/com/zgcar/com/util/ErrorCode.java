@@ -21,7 +21,7 @@ public class ErrorCode {
 			return context.getString(R.string.error_code_1001);
 		case 1002:
 			return context.getString(R.string.error_code_1002);
-		case 1003:
+		case 1003: 
 			return context.getString(R.string.error_code_1003);
 		case 1004:
 			return context.getString(R.string.error_code_1004);

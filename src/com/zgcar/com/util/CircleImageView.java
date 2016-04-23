@@ -20,7 +20,7 @@ import com.zgcar.com.R;
 
 /**
  * 自定义圆形头像
- *
+ * 
  */
 public class CircleImageView extends ImageView {
 
@@ -66,7 +66,7 @@ public class CircleImageView extends ImageView {
 		super.setScaleType(SCALE_TYPE);
 
 		TypedArray a = context.obtainStyledAttributes(attrs,
-				R.styleable.CircleImageView, defStyle, 0);
+				R.styleable.CircleImageView, defStyle, 0); 
 
 		mBorderWidth = a.getDimensionPixelSize(
 				R.styleable.CircleImageView_border_width, DEFAULT_BORDER_WIDTH);
@@ -89,11 +89,12 @@ public class CircleImageView extends ImageView {
 	}
 
 	@Override
-    public void setScaleType(ScaleType scaleType) {
-        if (scaleType != SCALE_TYPE) {
-            throw new IllegalArgumentException(String.format("ScaleType %s not supported.", scaleType));
-        }
-    }
+	public void setScaleType(ScaleType scaleType) {
+		if (scaleType != SCALE_TYPE) {
+			throw new IllegalArgumentException(String.format(
+					"ScaleType %s not supported.", scaleType));
+		}
+	}
 
 	@Override
 	protected void onDraw(Canvas canvas) {
@@ -162,15 +163,13 @@ public class CircleImageView extends ImageView {
 	}
 
 	private Bitmap getBitmapFromDrawable(Drawable drawable) {
-		if (drawable == null) {
-			return null;
-		}
-
-		if (drawable instanceof BitmapDrawable) {
-			return ((BitmapDrawable) drawable).getBitmap();
-		}
-
 		try {
+			if (drawable == null) {
+				return null;
+			}
+			if (drawable instanceof BitmapDrawable) {
+				return ((BitmapDrawable) drawable).getBitmap();
+			}
 			Bitmap bitmap;
 
 			if (drawable instanceof ColorDrawable) {
