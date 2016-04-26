@@ -9,6 +9,7 @@ import android.annotation.SuppressLint;
 import android.app.Application;
 import android.bluetooth.BluetoothDevice;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -28,7 +29,6 @@ public class MyApplication extends Application {
 	private int position;
 	private String userName;
 	private String imei;
-	private boolean isFirst;
 	private boolean isVoicePush;
 	private boolean isStandardsMap;
 	/**
@@ -57,14 +57,13 @@ public class MyApplication extends Application {
 	public void onCreate() {
 		Log.e("MyApplication", "onCreate");
 		super.onCreate();
-//		CrashHandler catchHandler = CrashHandler.getInstance();
-//		catchHandler.init(getApplicationContext());
+		// CrashHandler catchHandler = CrashHandler.getInstance();
+		// catchHandler.init(getApplicationContext());
 		FinalVariableLibrary.ScreenHeight = getResources().getDisplayMetrics().heightPixels;
 		FinalVariableLibrary.ScreenWidth = getResources().getDisplayMetrics().widthPixels;
 		isVoicePush = false;
 		messageNum = 0;
 		isStandardsMap = true;
-		isFirst = true;
 		position = 0;
 		imei = "";
 		userName = "";
@@ -127,6 +126,20 @@ public class MyApplication extends Application {
 
 	};
 
+	private void initPush() {
+		JPushInterface.setDebugMode(true);
+		JPushInterface.init(getApplicationContext());
+		SharedPreferences sf = getSharedPreferences(
+				FinalVariableLibrary.CACHE_FOLDER, MODE_PRIVATE);
+		boolean flag = sf.getBoolean("isReceiveNotify", true);
+		Log.e("MyApplication", "注册激光,接收消息:" + flag + ",用户名:" + userName);
+		if (flag) {
+			JPushInterface.resumePush(getApplicationContext());
+			JPushInterface.setAlias(getApplicationContext(), userName,
+					mTagsCallback);
+		}
+	}
+
 	public synchronized void addPushBundle(Bundle bundle) {
 		pushList.add(bundle);
 	}
@@ -167,14 +180,6 @@ public class MyApplication extends Application {
 		this.messageNum = messageNum;
 	}
 
-	public boolean isFirst() {
-		return isFirst;
-	}
-
-	public void setFirst(boolean isFirst) {
-		this.isFirst = isFirst;
-	}
-
 	public boolean userNameIsEmpty() {
 		return userName.equals("") ? true : false;
 	}
@@ -203,6 +208,7 @@ public class MyApplication extends Application {
 	public void setUserName(String userName) {
 		createFileCache(userName);
 		this.userName = userName;
+		initPush();
 	}
 
 	public String getImei() {

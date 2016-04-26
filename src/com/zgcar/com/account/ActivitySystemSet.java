@@ -100,7 +100,6 @@ public class ActivitySystemSet extends Activity implements OnClickListener {
 			JPushInterface.stopPush(ActivitySystemSet.this);
 			app.setPosition(0);
 			app.setImei("");
-			app.setFirst(true);
 			Editor editor = getSharedPreferences(
 					FinalVariableLibrary.CACHE_FOLDER, Context.MODE_PRIVATE)
 					.edit();

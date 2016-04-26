@@ -53,7 +53,6 @@ public class MainActivity extends Activity implements OnClickListener,
 		SetTitleBackground.setTitleBg(MainActivity.this, R.color.color_4);
 		Quit.addActivity(this);
 		super.onCreate(savedInstanceState);
-		isTheFirst();
 		setContentView(R.layout.activity_main);
 		initialize();
 		IntentFilter filter = new IntentFilter(
@@ -77,23 +76,6 @@ public class MainActivity extends Activity implements OnClickListener,
 			}
 		}
 		super.onResume();
-	}
-
-	private void isTheFirst() {
-		app = (MyApplication) getApplication();
-		if (app.isFirst()) {
-			JPushInterface.init(MainActivity.this);
-			JPushInterface.setDebugMode(false);
-			SharedPreferences sf = getSharedPreferences(
-					FinalVariableLibrary.CACHE_FOLDER, MODE_PRIVATE);
-			boolean flag = sf.getBoolean("isReceiveNotify", true);
-			if (flag) {
-				JPushInterface.resumePush(MainActivity.this);
-				JPushInterface.setAlias(MainActivity.this, app.getUserName(),
-						app.mTagsCallback);
-			}
-			app.setFirst(false);
-		}
 	}
 
 	private void fragentFactory(int checkedId) {
@@ -131,6 +113,7 @@ public class MainActivity extends Activity implements OnClickListener,
 	}
 
 	private void initialize() {
+		app = (MyApplication) getApplication();
 		setRadioButtonDrawableTop();
 		tvHasVoiceInfo = (TextView) findViewById(R.id.main_has_voice_info);
 		RelativeLayout.LayoutParams params = (android.widget.RelativeLayout.LayoutParams) tvHasVoiceInfo
@@ -224,8 +207,6 @@ public class MainActivity extends Activity implements OnClickListener,
 	protected void onDestroy() {
 		unregisterReceiver(receiver);
 		if (!app.isVoicePush()) {
-			app.setFirst(true);
-			JPushInterface.stopPush(MainActivity.this);
 			stopService(new Intent(MainActivity.this, MyPushService.class));
 			stopService(new Intent(MainActivity.this,
 					ServiceStartLocation.class));

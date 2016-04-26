@@ -12,6 +12,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,6 +33,7 @@ import com.amap.api.services.core.AMapException;
 import com.amap.api.services.core.PoiItem;
 import com.amap.api.services.help.Inputtips;
 import com.amap.api.services.help.Inputtips.InputtipsListener;
+import com.amap.api.services.help.InputtipsQuery;
 import com.amap.api.services.help.Tip;
 import com.amap.api.services.poisearch.PoiResult;
 import com.amap.api.services.poisearch.PoiSearch;
@@ -238,12 +240,15 @@ public class ActivitySafetySearch1 extends Activity implements TextWatcher,
 
 	@Override
 	public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+		Log.e("ActivitySafetySearch1", "onTextChanged");
 		String newText = s.toString().trim();
 		Inputtips inputTips = new Inputtips(ActivitySafetySearch1.this,
 				new InputtipsListener() {
 					@Override
 					public void onGetInputtips(List<Tip> tipList, int rCode) {
-						if (rCode == 0) {// 正确返回
+						Log.e("ActivitySafetySearch1", "InputtipsListener:"+rCode);
+						if (rCode == 1000) {// 正确返回
 							List<String> listString = new ArrayList<String>();
 							for (int i = 0; i < tipList.size(); i++) {
 								listString.add(tipList.get(i).getName());
@@ -257,11 +262,14 @@ public class ActivitySafetySearch1 extends Activity implements TextWatcher,
 						}
 					}
 				});
-		try {
-			inputTips.requestInputtips(newText, "");// 第一个参数表示提示关键字，第二个参数默认代表全国，也可以为城市区号
-		} catch (AMapException e) {
-			e.printStackTrace();
-		}
+		 try {
+			 //InputtipsQuery query = new InputtipsQuery(newText, "");
+			 //	inputTips.setQuery(query);
+		 inputTips.requestInputtips(newText, "");//
+		// 第一个参数表示提示关键字，第二个参数默认代表全国，也可以为城市区号
+		 } catch (AMapException e) {
+		 e.printStackTrace();
+		 }
 	}
 
 	/**
@@ -329,7 +337,7 @@ public class ActivitySafetySearch1 extends Activity implements TextWatcher,
 
 	@Override
 	public void onPoiItemSearched(PoiItem arg0, int arg1) {
-		// TODO Auto-generated method stub
+		
 
 	}
 }

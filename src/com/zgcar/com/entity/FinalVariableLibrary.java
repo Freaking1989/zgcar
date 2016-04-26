@@ -99,9 +99,9 @@ public class FinalVariableLibrary {
 	 */
 	public static final String SET_REGISTER_PSW_CMD = "00001";
 	/**
-	 * 用户输入密码登陆
+	 * 用户输入密码登陆80002
 	 */
-	public static final String INPUT_PASSWOR_AND_LOADING = "80002";
+	public static final String INPUT_PASSWOR_AND_LOADING = "00002";
 
 	/**
 	 * 添加新考拉
@@ -362,9 +362,9 @@ public class FinalVariableLibrary {
 	public static final String GET_CODE_STATE_CMD = "20003";
 
 	/**
-	 * .获取终端列表
+	 * .获取终端列表30011
 	 */
-	public static final String GET_WATCH_LIST_CMD = "30011";
+	public static final String GET_WATCH_LIST_CMD = "30001";
 	/**
 	 * 编辑终端
 	 */
@@ -384,21 +384,6 @@ public class FinalVariableLibrary {
 	 */
 	public static final String FAMILY_ADD_NEW_MEMBER_CMD = "80065";
 
-	/**
-	 * socket超时短
-	 */
-	public static final int SOCKET_TIME_OUT_SHORT = 1000;
-	/**
-	 * socket超时中长
-	 */
-	public static final int SOCKET_TIME_OUT_LONG = 5000;
-	/**
-	 * socket超时中
-	 */
-	public static final int SOCKET_TIME_OUT_MIDDLE = 3000;
-	/**
-	 * 最大超时次数
-	 */
-	public static final int SOCKET_TIME_OUT_MAXCOUNT = 3;
+	
 
 }

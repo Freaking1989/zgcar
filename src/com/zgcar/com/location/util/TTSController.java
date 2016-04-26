@@ -239,11 +239,7 @@ public class TTSController implements SynthesizerListener, AMapNaviListener {
 
     }
 
-    @Override
-    public void onNaviInfoUpdated(AMapNaviInfo arg0) {
-        // TODO Auto-generated method stub
-
-    }
+   
 
     @Override
     public void onNaviInfoUpdate(NaviInfo arg0) {
@@ -291,4 +287,11 @@ public class TTSController implements SynthesizerListener, AMapNaviListener {
     public void notifyParallelRoad(int i) {
 
     }
+
+	@Override
+	@Deprecated
+	public void onNaviInfoUpdated(AMapNaviInfo arg0) {
+		
+		
+	}
 }

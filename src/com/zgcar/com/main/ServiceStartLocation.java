@@ -2,7 +2,6 @@ package com.zgcar.com.main;
 
 import android.app.Service;
 import android.content.Intent;
-import android.os.Handler;
 import android.os.IBinder;
 import android.util.Log;
 
@@ -18,7 +17,6 @@ public class ServiceStartLocation extends Service implements
 	private AMapLocationClient locationClient;
 	private AMapLocationClientOption locationOption;
 	private MyApplication app;
-	private Handler handle;
 
 	@Override
 	public IBinder onBind(Intent intent) {
@@ -27,7 +25,6 @@ public class ServiceStartLocation extends Service implements
 
 	@Override
 	public void onCreate() {
-		handle = new Handler();
 		app = (MyApplication) getApplication();
 		startLocation();
 		super.onCreate();
