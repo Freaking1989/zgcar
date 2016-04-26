@@ -65,9 +65,9 @@ public class FinalVariableLibrary {
 	public static String requestURL = "http://" + FinalVariableLibrary.ip + ":"
 			+ FinalVariableLibrary.DSTPORT0 + "/****/image/up?****.jpg";
 	/**
-	 * 地图类型
+	 * 地图类型，百度：0,GOOGLE：1,高德：2
 	 */
-	public static String MAP_TYPE;
+	public static int MAP_TYPE;
 
 	/**
 	 * 当前账户头像
@@ -101,7 +101,7 @@ public class FinalVariableLibrary {
 	/**
 	 * 用户输入密码登陆
 	 */
-	public static final String INPUT_PASSWOR_AND_LOADING = "00002";
+	public static final String INPUT_PASSWOR_AND_LOADING = "80002";
 
 	/**
 	 * 添加新考拉
@@ -303,6 +303,42 @@ public class FinalVariableLibrary {
 	 */
 	public static final String CHAT_VOICE_CMD = "00071";
 	/**
+	 * 设置断油/电cmd
+	 */
+	public static final String EDIT_OIL_ELECTRICITY_STATE = "00100";
+
+	/**
+	 * 设置设/撤防cmd
+	 */
+	public static final String EDIT_FORTIFICATION_DISARM = "00101";
+	/**
+	 * 获取当前油电状态cmd
+	 */
+	public static final String OIL_ELECTRICITY_STATE = "00103";
+	/**
+	 * 获取终端设防状态cmd
+	 */
+	public static final String FORTIFICATION_DISARM_STATE = "00104";
+	/**
+	 * 里程统计cmd
+	 */
+	public static final String MILEAGE_SRATISTICS = "00110";
+
+	/**
+	 * 运行统计cmd
+	 */
+	public static final String RUN_SRATISTICS = "00111";
+
+	/**
+	 * 超速统计cmd
+	 */
+	public static final String SPEEDING_SRATISTICS = "00112";
+	/**
+	 * 报警统计cmd
+	 */
+	public static final String ALARM_SRATISTICS = "00113";
+
+	/**
 	 * 修改用户登录密码
 	 */
 	public static final String CHANGE_USER_PSW = "10001";
@@ -328,11 +364,11 @@ public class FinalVariableLibrary {
 	/**
 	 * .获取终端列表
 	 */
-	public static final String GET_WATCH_LIST_CMD = "30001";
+	public static final String GET_WATCH_LIST_CMD = "30011";
 	/**
 	 * 编辑终端
 	 */
-	public static final String EDIT_WATCH_BASIC = "30003";
+	public static final String EDIT_WATCH_BASIC = "30033";
 	/**
 	 * 查询绑定的imei是否可用
 	 */

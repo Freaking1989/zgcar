@@ -240,6 +240,11 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat" >
         </activity>
+         <activity
+            android:name="com.zgcar.com.account.ActivityDisarmFortification"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat" >
+        </activity>
         <activity
             android:name="com.zgcar.com.account.ActivityElectricityAndOilManage"
             android:screenOrientation="portrait"

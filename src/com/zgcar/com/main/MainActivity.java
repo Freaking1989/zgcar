@@ -103,10 +103,10 @@ public class MainActivity extends Activity implements OnClickListener,
 			String language = getResources().getConfiguration().locale
 					.getCountry();
 			if (language.equals("CN") || language.equals("TW")) {
-				FinalVariableLibrary.MAP_TYPE = "2";
+				FinalVariableLibrary.MAP_TYPE = 2;
 				changeFragment(0);
 			} else {
-				FinalVariableLibrary.MAP_TYPE = "1";
+				FinalVariableLibrary.MAP_TYPE = 1;
 				changeFragment(1);
 			}
 			break;
@@ -159,10 +159,10 @@ public class MainActivity extends Activity implements OnClickListener,
 					.getCountry();
 			if (language.equals("CN") || language.equals("TW")) {
 				changeFragment(0);
-				FinalVariableLibrary.MAP_TYPE = "2";
+				FinalVariableLibrary.MAP_TYPE = 2;
 			} else {
 				changeFragment(1);
-				FinalVariableLibrary.MAP_TYPE = "1";
+				FinalVariableLibrary.MAP_TYPE = 1;
 			}
 			tempId = R.id.radio_button1;
 			radioGroup.check(R.id.radio_button1);

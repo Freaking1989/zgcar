@@ -3,6 +3,7 @@ package com.zgcar.com.account;
 import android.app.Activity;
 import android.app.Dialog;
 import android.os.Bundle;
+import android.os.Looper;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -13,18 +14,22 @@ import android.widget.TextView;
 
 import com.zgcar.com.R;
 import com.zgcar.com.entity.FinalVariableLibrary;
+import com.zgcar.com.main.MyApplication;
+import com.zgcar.com.socket.GetJsonString;
+import com.zgcar.com.socket.SocketUtil;
 import com.zgcar.com.util.Quit;
 import com.zgcar.com.util.SetTitleBackground;
 import com.zgcar.com.util.Util;
 
 /**
- * –°ªÔ∞È
+ * ∂œ”Õ∂œµÁ
  * 
  */
 public class ActivityElectricityAndOilManage extends Activity implements
 		OnClickListener {
 
 	private Dialog dialog;
+	private MyApplication app;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +40,11 @@ public class ActivityElectricityAndOilManage extends Activity implements
 		setContentView(R.layout.activity_electricity_and_oil_manage);
 		showInputPswDialog();
 		init();
+
 	}
 
 	private void init() {
+		app = (MyApplication) getApplication();
 		ImageButton back = (ImageButton) findViewById(R.id.electricity_oil_manage_back);
 		back.setOnClickListener(this);
 	}
@@ -65,34 +72,35 @@ public class ActivityElectricityAndOilManage extends Activity implements
 		super.onPause();
 	}
 
-	// private void getGuysInfosRequest() {
-	// app = (MyApplication) getApplication();
-	// sf = getSharedPreferences(FinalVariableLibrary.CACHE_FOLDER,
-	// MODE_PRIVATE);
-	// new Thread(new Runnable() {
-	// @Override
-	// public void run() {
-	// String jsonStr = GetJsonString.getRequestJson(
-	// FinalVariableLibrary.GUYS_INFOS_CMD, app.getImei(), -1,
-	// app.getUserName());
-	// boolean flag1 = SocketUtil.connectService(jsonStr);
-	// if (flag1) {
-	// guysListInfos = ResolveServiceData.getGuysListInfos(sf,
-	// app, ActivityElectricityAndOilManage.this);
-	// handler.sendMessage(handler.obtainMessage(0));
-	// } else {
-	// Looper.prepare();
-	// dialog.dismiss();
-	// Util.showToastBottom(
-	// ActivityElectricityAndOilManage.this,
-	// SocketUtil
-	// .isFail(ActivityElectricityAndOilManage.this));
-	// Looper.loop();
-	// return;
-	// }
-	// }
-	// }).start();
-	// }
+	/**
+	 * {"cmd":"00100","data":[{"imei":"861400000000088"}]}
+	 */
+	private void getInfosRequest() {
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				String jsonStr = GetJsonString.getRequestJson(
+						FinalVariableLibrary.OIL_ELECTRICITY_STATE,
+						app.getImei(), -1, app.getUserName());
+				boolean flag1 = SocketUtil.connectService(jsonStr);
+				if (flag1) {
+					/**
+					 * 
+					 * 
+					 * **/
+				} else {
+					Looper.prepare();
+					dialog.dismiss();
+					Util.showToastBottom(
+							ActivityElectricityAndOilManage.this,
+							SocketUtil
+									.isFail(ActivityElectricityAndOilManage.this));
+					Looper.loop();
+					return;
+				}
+			}
+		}).start();
+	}
 
 	@Override
 	protected void onDestroy() {
@@ -137,12 +145,21 @@ public class ActivityElectricityAndOilManage extends Activity implements
 				FinalVariableLibrary.CACHE_FOLDER, MODE_PRIVATE).getString(
 				"userPsw", "");
 		if (userPsw.equals(psw)) {
+			showProgressDialog();
+			getInfosRequest();
 			dialogDismiss();
 		} else {
 			Util.showToastCenter(ActivityElectricityAndOilManage.this,
 					"«Î ‰»Î’˝»∑’ ªß√‹¬Î.");
 		}
 
+	}
+
+	private void showProgressDialog() {
+		dialog = getDialog();
+		dialog.setCancelable(false);
+		dialog.setContentView(R.layout.view_progress_dialog);
+		dialog.show();
 	}
 
 	public Dialog getDialog() {

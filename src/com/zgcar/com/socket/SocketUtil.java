@@ -35,6 +35,7 @@ public class SocketUtil {
 	 */
 	public static synchronized boolean connectService(String jsonStr) {
 		try {
+			Log.e("SocketUtil", "发送的JSON数据:"+jsonStr);
 			byte[] buffer = new byte[1024];
 			int length = -1;
 			String str = null;

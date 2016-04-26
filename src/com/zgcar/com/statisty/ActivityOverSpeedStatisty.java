@@ -3,6 +3,7 @@ package com.zgcar.com.statisty;
 import android.app.Activity;
 import android.app.Dialog;
 import android.os.Bundle;
+import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -14,32 +15,42 @@ import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
 import com.zgcar.com.R;
+import com.zgcar.com.entity.FinalVariableLibrary;
+import com.zgcar.com.main.MyApplication;
+import com.zgcar.com.socket.GetJsonString;
+import com.zgcar.com.socket.SocketUtil;
 import com.zgcar.com.util.SetTitleBackground;
 import com.zgcar.com.util.Util;
 import com.zgcar.com.wheelview.OnWheelScrollListener;
 import com.zgcar.com.wheelview.WheelView;
 import com.zgcar.com.wheelview.adapters.ArrayWheelAdapter;
 
-public class ActivityOverSpeedStatisty extends Activity implements OnClickListener,
-		OnCheckedChangeListener {
+/**
+ * @author Freaking 超速统计
+ */
+public class ActivityOverSpeedStatisty extends Activity implements
+		OnClickListener, OnCheckedChangeListener {
 	private TextView timeTv;
 	private Dialog dialog;
 	private int tempCheckId;
 	private Button endTimeBt, startTimeBt;
 	private String[] yearArray, monthArray, dayArray, hourArray, minArray;
+	private MyApplication app;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		getWindow().setBackgroundDrawableResource(R.color.color_4);
-		SetTitleBackground
-				.setTitleBg(ActivityOverSpeedStatisty.this, R.color.color_4);
+		SetTitleBackground.setTitleBg(ActivityOverSpeedStatisty.this,
+				R.color.color_4);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_overspeed_statisty);
 		init();
+		getInfosRequest();
 	}
 
 	private void init() {
+		app = (MyApplication) getApplication();
 		tempCheckId = 0;
 		yearArray = Util.getYearArray();
 		dayArray = Util.getDayArray(null, null);
@@ -98,9 +109,33 @@ public class ActivityOverSpeedStatisty extends Activity implements OnClickListen
 
 	}
 
+	private void getInfosRequest() {
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				String jsonStr = GetJsonString.getRequestJson(
+						FinalVariableLibrary.SPEEDING_SRATISTICS,
+						app.getImei(), "", "");
+				boolean flag1 = SocketUtil.connectService(jsonStr);
+				if (flag1) {
+					/**
+					 * 
+					 * 
+					 * **/
+				} else {
+					Looper.prepare();
+					dialogDismiss();
+					Util.showToastBottom(ActivityOverSpeedStatisty.this,
+							SocketUtil.isFail(ActivityOverSpeedStatisty.this));
+					Looper.loop();
+					return;
+				}
+			}
+		}).start();
+	}
+
 	private void showGetTimeView(final boolean isStart) {
-		final Dialog dialog = new Dialog(ActivityOverSpeedStatisty.this,
-				R.style.dialog);
+		dialog = getDialog();
 		dialog.setCancelable(true);
 		View view = View.inflate(ActivityOverSpeedStatisty.this,
 				R.layout.view_date_picker, null);
@@ -169,7 +204,7 @@ public class ActivityOverSpeedStatisty extends Activity implements OnClickListen
 		no.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				dialog.dismiss();
+				dialogDismiss();
 			}
 		});
 		Button yes = (Button) view.findViewById(R.id.view_date_picker_yes);
@@ -190,7 +225,7 @@ public class ActivityOverSpeedStatisty extends Activity implements OnClickListen
 							+ hourArray[hour.getCurrentItem()] + ":"
 							+ minArray[min.getCurrentItem()]);
 				}
-				dialog.dismiss();
+				dialogDismiss();
 			}
 		});
 		dialog.setContentView(view);
@@ -203,8 +238,7 @@ public class ActivityOverSpeedStatisty extends Activity implements OnClickListen
 	}
 
 	private void showSelectTimeView() {
-		dialog = dialog == null ? new Dialog(ActivityOverSpeedStatisty.this,
-				R.style.dialog) : dialog;
+		dialog = getDialog();
 		dialog.setCancelable(true);
 		View view = View.inflate(ActivityOverSpeedStatisty.this,
 				R.layout.view_statisty_time_selector, null);
@@ -247,8 +281,7 @@ public class ActivityOverSpeedStatisty extends Activity implements OnClickListen
 	 * 显示自定义时间段view
 	 */
 	private void showCostumTimeDialog() {
-		dialog = dialog == null ? new Dialog(ActivityOverSpeedStatisty.this,
-				R.style.dialog) : dialog;
+		dialog = getDialog();
 		dialog.setCancelable(true);
 		View view = View.inflate(ActivityOverSpeedStatisty.this,
 				R.layout.view_statisty_time_selector_sub1, null);
@@ -273,4 +306,15 @@ public class ActivityOverSpeedStatisty extends Activity implements OnClickListen
 
 	}
 
+	private void showProgressDialog() {
+		dialog = getDialog();
+		dialog.setCancelable(false);
+		dialog.setContentView(R.layout.view_progress_dialog);
+		dialog.show();
+	}
+
+	public Dialog getDialog() {
+		return dialog == null ? new Dialog(ActivityOverSpeedStatisty.this,
+				R.style.dialog) : dialog;
+	}
 }

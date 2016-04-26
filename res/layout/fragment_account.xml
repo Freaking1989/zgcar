@@ -118,7 +118,7 @@
                         android:layout_height="match_parent"
                         android:background="@color/color_10" />
                     <Button
-                        android:id="@+id/fragment_account_guys_main"
+                        android:id="@+id/fragment_account_oil_electricity_info"
                         android:layout_width="0dp"
                         android:layout_height="80dp"
                         android:layout_weight="1"
@@ -152,7 +152,7 @@
                     android:layout_weight="1"
                     android:weightSum="3" >
                     <Button
-                        android:id="@+id/fragment_account_find_watch"
+                        android:id="@+id/fragment_account_disarm_fortification_bt"
                         android:layout_width="0dp"
                         android:layout_height="80dp"
                         android:layout_weight="1"

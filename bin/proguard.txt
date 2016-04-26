@@ -46,28 +46,28 @@
 # view res/layout/abc_search_view.xml #generated:85
 -keep class android.support.v7.widget.SearchView$SearchAutoComplete { <init>(...); }
 
-# view AndroidManifest.xml #generated:412
+# view AndroidManifest.xml #generated:417
 -keep class ccom.zgcar.com.account.ActivityEditSafetyArea2 { <init>(...); }
 
-# view AndroidManifest.xml #generated:588
+# view AndroidManifest.xml #generated:593
 -keep class cn.jpush.android.service.AlarmReceiver { <init>(...); }
 
-# view AndroidManifest.xml #generated:537
+# view AndroidManifest.xml #generated:542
 -keep class cn.jpush.android.service.DaemonService { <init>(...); }
 
-# view AndroidManifest.xml #generated:582
+# view AndroidManifest.xml #generated:587
 -keep class cn.jpush.android.service.DownloadService { <init>(...); }
 
-# view AndroidManifest.xml #generated:549
+# view AndroidManifest.xml #generated:554
 -keep class cn.jpush.android.service.PushReceiver { <init>(...); }
 
-# view AndroidManifest.xml #generated:523
+# view AndroidManifest.xml #generated:528
 -keep class cn.jpush.android.service.PushService { <init>(...); }
 
-# view AndroidManifest.xml #generated:570
+# view AndroidManifest.xml #generated:575
 -keep class cn.jpush.android.ui.PushActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:517
+# view AndroidManifest.xml #generated:522
 -keep class com.amap.api.location.APSService { <init>(...); }
 
 # view res/layout/activity_safety_area_edit.xml #generated:63
@@ -79,10 +79,10 @@
 # view res/layout/activity_nav_simple_route.xml #generated:42
 -keep class com.amap.api.navi.AMapNaviView { <init>(...); }
 
-# view AndroidManifest.xml #generated:314
+# view AndroidManifest.xml #generated:319
 -keep class com.zgcar.com.account.ActivityAboutApp { <init>(...); }
 
-# view AndroidManifest.xml #generated:319
+# view AndroidManifest.xml #generated:324
 -keep class com.zgcar.com.account.ActivityAboutAppPermission { <init>(...); }
 
 # view AndroidManifest.xml #generated:218
@@ -97,46 +97,49 @@
 # view AndroidManifest.xml #generated:168
 -keep class com.zgcar.com.account.ActivityBasics { <init>(...); }
 
-# view AndroidManifest.xml #generated:487
+# view AndroidManifest.xml #generated:492
 -keep class com.zgcar.com.account.ActivityBlueTooth { <init>(...); }
 
 # view AndroidManifest.xml #generated:228
 -keep class com.zgcar.com.account.ActivityBluetoothPreventLost { <init>(...); }
 
-# view AndroidManifest.xml #generated:289
+# view AndroidManifest.xml #generated:294
 -keep class com.zgcar.com.account.ActivityCheckPhone { <init>(...); }
+
+# view AndroidManifest.xml #generated:243
+-keep class com.zgcar.com.account.ActivityDisarmFortification { <init>(...); }
 
 # view AndroidManifest.xml #generated:173
 -keep class com.zgcar.com.account.ActivityEditBasics { <init>(...); }
 
-# view AndroidManifest.xml #generated:243
+# view AndroidManifest.xml #generated:248
 -keep class com.zgcar.com.account.ActivityElectricityAndOilManage { <init>(...); }
 
-# view AndroidManifest.xml #generated:284
+# view AndroidManifest.xml #generated:289
 -keep class com.zgcar.com.account.ActivityFamilyAdminBasics { <init>(...); }
 
 # view AndroidManifest.xml #generated:133
 -keep class com.zgcar.com.account.ActivityFamilyEditRelationship { <init>(...); }
 
-# view AndroidManifest.xml #generated:264
+# view AndroidManifest.xml #generated:269
 -keep class com.zgcar.com.account.ActivityFamilyMemberBabyBasics { <init>(...); }
 
-# view AndroidManifest.xml #generated:269
+# view AndroidManifest.xml #generated:274
 -keep class com.zgcar.com.account.ActivityFamilyMemberMyselfBasics { <init>(...); }
 
-# view AndroidManifest.xml #generated:274
+# view AndroidManifest.xml #generated:279
 -keep class com.zgcar.com.account.ActivityFamilyMemberParentBasics { <init>(...); }
 
-# view AndroidManifest.xml #generated:254
+# view AndroidManifest.xml #generated:259
 -keep class com.zgcar.com.account.ActivityFamilyMembers { <init>(...); }
 
-# view AndroidManifest.xml #generated:259
+# view AndroidManifest.xml #generated:264
 -keep class com.zgcar.com.account.ActivityFamilyMembersAddNew { <init>(...); }
 
 # view AndroidManifest.xml #generated:213
 -keep class com.zgcar.com.account.ActivityFeedBack { <init>(...); }
 
-# view AndroidManifest.xml #generated:249
+# view AndroidManifest.xml #generated:254
 -keep class com.zgcar.com.account.ActivityGuyBasics { <init>(...); }
 
 # view AndroidManifest.xml #generated:208
@@ -157,34 +160,34 @@
 # view AndroidManifest.xml #generated:178
 -keep class com.zgcar.com.account.ActivityQrCode { <init>(...); }
 
-# view AndroidManifest.xml #generated:354
+# view AndroidManifest.xml #generated:359
 -keep class com.zgcar.com.account.ActivitySafetyArea { <init>(...); }
 
-# view AndroidManifest.xml #generated:396
+# view AndroidManifest.xml #generated:401
 -keep class com.zgcar.com.account.ActivitySafetyAreaEdit1 { <init>(...); }
 
-# view AndroidManifest.xml #generated:402
+# view AndroidManifest.xml #generated:407
 -keep class com.zgcar.com.account.ActivitySafetyAreaEdit2 { <init>(...); }
 
-# view AndroidManifest.xml #generated:423
+# view AndroidManifest.xml #generated:428
 -keep class com.zgcar.com.account.ActivitySafetySearch1 { <init>(...); }
 
-# view AndroidManifest.xml #generated:428
+# view AndroidManifest.xml #generated:433
 -keep class com.zgcar.com.account.ActivitySafetySearch2 { <init>(...); }
 
-# view AndroidManifest.xml #generated:279
+# view AndroidManifest.xml #generated:284
 -keep class com.zgcar.com.account.ActivitySelectAdmin { <init>(...); }
 
 # view AndroidManifest.xml #generated:198
 -keep class com.zgcar.com.account.ActivitySetAlarmClockRing { <init>(...); }
 
-# view AndroidManifest.xml #generated:304
+# view AndroidManifest.xml #generated:309
 -keep class com.zgcar.com.account.ActivitySetBrightness { <init>(...); }
 
 # view AndroidManifest.xml #generated:193
 -keep class com.zgcar.com.account.ActivitySetClockTime { <init>(...); }
 
-# view AndroidManifest.xml #generated:336
+# view AndroidManifest.xml #generated:341
 -keep class com.zgcar.com.account.ActivitySetGoal { <init>(...); }
 
 # view AndroidManifest.xml #generated:138
@@ -193,19 +196,19 @@
 # view AndroidManifest.xml #generated:158
 -keep class com.zgcar.com.account.ActivitySetTimeZone { <init>(...); }
 
-# view AndroidManifest.xml #generated:299
+# view AndroidManifest.xml #generated:304
 -keep class com.zgcar.com.account.ActivitySetVolume { <init>(...); }
 
 # view AndroidManifest.xml #generated:153
 -keep class com.zgcar.com.account.ActivitySetWatchAPN { <init>(...); }
 
-# view AndroidManifest.xml #generated:331
+# view AndroidManifest.xml #generated:336
 -keep class com.zgcar.com.account.ActivitySmallRedFlowers { <init>(...); }
 
 # view AndroidManifest.xml #generated:233
 -keep class com.zgcar.com.account.ActivityStudyModel { <init>(...); }
 
-# view AndroidManifest.xml #generated:309
+# view AndroidManifest.xml #generated:314
 -keep class com.zgcar.com.account.ActivityStudyModelAddDays { <init>(...); }
 
 # view AndroidManifest.xml #generated:143
@@ -214,64 +217,64 @@
 # view AndroidManifest.xml #generated:203
 -keep class com.zgcar.com.account.ActivityWearingHabits { <init>(...); }
 
-# view AndroidManifest.xml #generated:515
+# view AndroidManifest.xml #generated:520
 -keep class com.zgcar.com.account.ServiceBlueTooth { <init>(...); }
 
-# view AndroidManifest.xml #generated:493
+# view AndroidManifest.xml #generated:498
 -keep class com.zgcar.com.account.copy.BluetoothLeService { <init>(...); }
 
-# view AndroidManifest.xml #generated:325
+# view AndroidManifest.xml #generated:330
 -keep class com.zgcar.com.chat.ActivityMessageNotify { <init>(...); }
 
-# view AndroidManifest.xml #generated:473
+# view AndroidManifest.xml #generated:478
 -keep class com.zgcar.com.history.ActivitySosMeage1 { <init>(...); }
 
-# view AndroidManifest.xml #generated:478
+# view AndroidManifest.xml #generated:483
 -keep class com.zgcar.com.history.ActivitySosMeage2 { <init>(...); }
 
-# view AndroidManifest.xml #generated:407
+# view AndroidManifest.xml #generated:412
 -keep class com.zgcar.com.location.ActivityBindWatchSucceed { <init>(...); }
 
-# view AndroidManifest.xml #generated:455
+# view AndroidManifest.xml #generated:460
 -keep class com.zgcar.com.location.ActivityBindingImei { <init>(...); }
 
-# view AndroidManifest.xml #generated:461
+# view AndroidManifest.xml #generated:466
 -keep class com.zgcar.com.location.ActivityBindingRelationShip { <init>(...); }
 
-# view AndroidManifest.xml #generated:359
+# view AndroidManifest.xml #generated:364
 -keep class com.zgcar.com.location.ActivityBindingSetAPN { <init>(...); }
 
-# view AndroidManifest.xml #generated:467
+# view AndroidManifest.xml #generated:472
 -keep class com.zgcar.com.location.ActivityBindingSim { <init>(...); }
 
-# view AndroidManifest.xml #generated:342
+# view AndroidManifest.xml #generated:347
 -keep class com.zgcar.com.location.ActivityHistory { <init>(...); }
 
-# view AndroidManifest.xml #generated:438
+# view AndroidManifest.xml #generated:443
 -keep class com.zgcar.com.location.ActivityLocationModelDesc { <init>(...); }
 
-# view AndroidManifest.xml #generated:502
+# view AndroidManifest.xml #generated:507
 -keep class com.zgcar.com.location.ActivityNaviRoute1 { <init>(...); }
 
-# view AndroidManifest.xml #generated:507
+# view AndroidManifest.xml #generated:512
 -keep class com.zgcar.com.location.ActivityNaviRoute2 { <init>(...); }
 
-# view AndroidManifest.xml #generated:496
+# view AndroidManifest.xml #generated:501
 -keep class com.zgcar.com.location.ActivityScanning { <init>(...); }
 
-# view AndroidManifest.xml #generated:443
+# view AndroidManifest.xml #generated:448
 -keep class com.zgcar.com.location.ActivityShowHistoryInfo1 { <init>(...); }
 
-# view AndroidManifest.xml #generated:449
+# view AndroidManifest.xml #generated:454
 -keep class com.zgcar.com.location.ActivityShowHistoryInfo2 { <init>(...); }
 
-# view AndroidManifest.xml #generated:417
+# view AndroidManifest.xml #generated:422
 -keep class com.zgcar.com.location.AddsafetyZoneActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:433
+# view AndroidManifest.xml #generated:438
 -keep class com.zgcar.com.location.BaseMapActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:348
+# view AndroidManifest.xml #generated:353
 -keep class com.zgcar.com.location.EditingActivity { <init>(...); }
 
 # view AndroidManifest.xml #generated:126
@@ -280,13 +283,13 @@
 # view AndroidManifest.xml #generated:64
 -keep class com.zgcar.com.main.MyApplication { <init>(...); }
 
-# view AndroidManifest.xml #generated:513
+# view AndroidManifest.xml #generated:518
 -keep class com.zgcar.com.main.ServiceStartLocation { <init>(...); }
 
-# view AndroidManifest.xml #generated:484
+# view AndroidManifest.xml #generated:489
 -keep class com.zgcar.com.receiver.MyPushService { <init>(...); }
 
-# view AndroidManifest.xml #generated:591
+# view AndroidManifest.xml #generated:596
 -keep class com.zgcar.com.receiver.MyReceiver { <init>(...); }
 
 # view AndroidManifest.xml #generated:96
@@ -316,22 +319,22 @@
 # view AndroidManifest.xml #generated:75
 -keep class com.zgcar.com.start.ActivityWelcome { <init>(...); }
 
-# view AndroidManifest.xml #generated:364
+# view AndroidManifest.xml #generated:369
 -keep class com.zgcar.com.statisty.ActivityAccStatisty { <init>(...); }
 
-# view AndroidManifest.xml #generated:379
+# view AndroidManifest.xml #generated:384
 -keep class com.zgcar.com.statisty.ActivityAlarmStatisty { <init>(...); }
 
-# view AndroidManifest.xml #generated:369
+# view AndroidManifest.xml #generated:374
 -keep class com.zgcar.com.statisty.ActivityMileageStatisty { <init>(...); }
 
-# view AndroidManifest.xml #generated:374
+# view AndroidManifest.xml #generated:379
 -keep class com.zgcar.com.statisty.ActivityOverSpeedStatisty { <init>(...); }
 
-# view AndroidManifest.xml #generated:384
+# view AndroidManifest.xml #generated:389
 -keep class com.zgcar.com.statisty.ActivityStayStatisty { <init>(...); }
 
-# view AndroidManifest.xml #generated:389
+# view AndroidManifest.xml #generated:394
 -keep class com.zgcar.com.statisty.ActivityTravelStatisty { <init>(...); }
 
 # view res/layout/activity_basics.xml #generated:64

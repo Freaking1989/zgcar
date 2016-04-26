@@ -134,10 +134,10 @@ public class ActivityLoadingInputPassword extends Activity implements
 			String language = getResources().getConfiguration().locale
 					.getCountry();
 			if (language.equals("CN") || language.equals("TW")) {
-				FinalVariableLibrary.MAP_TYPE = "2";
+				FinalVariableLibrary.MAP_TYPE = 2;
 				b2.put("language", "CN");
 			} else {
-				FinalVariableLibrary.MAP_TYPE = "1";
+				FinalVariableLibrary.MAP_TYPE = 1;
 				b2.put("language", "EN");
 			}
 			b2.put("name", phoneNo);

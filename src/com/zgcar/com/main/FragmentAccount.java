@@ -19,6 +19,7 @@ import android.widget.TextView;
 import com.zgcar.com.R;
 import com.zgcar.com.account.ActivityBasics;
 import com.zgcar.com.account.ActivityCheckPhone;
+import com.zgcar.com.account.ActivityDisarmFortification;
 import com.zgcar.com.account.ActivityElectricityAndOilManage;
 import com.zgcar.com.account.ActivityFamilyMembers;
 import com.zgcar.com.account.ActivitySafetyArea;
@@ -58,7 +59,8 @@ public class FragmentAccount extends Fragment implements OnClickListener {
 		if (!app.imeiIsEmpty(getActivity(), false)) {
 			position = app.getPosition();
 			if (ListInfosEntity.getTerminalListInfos() == null) {
-				Util.showToastBottom(getActivity(), getString(R.string.get_watch_basics_failed));
+				Util.showToastBottom(getActivity(),
+						getString(R.string.get_watch_basics_failed));
 				return;
 			}
 			name.setText(ListInfosEntity.getTerminalListInfos().get(position)
@@ -101,14 +103,15 @@ public class FragmentAccount extends Fragment implements OnClickListener {
 		Button checkPhone = (Button) view
 				.findViewById(R.id.fragment_account_check_phone);
 		setDrawableTop(checkPhone, R.drawable.account_icon_check_phone, width);
-		Button findWatch = (Button) view
-				.findViewById(R.id.fragment_account_find_watch);
-		setDrawableTop(findWatch, R.drawable.icon_acount_table4, width);
+		Button disarmFortificationBt = (Button) view
+				.findViewById(R.id.fragment_account_disarm_fortification_bt);
+		setDrawableTop(disarmFortificationBt, R.drawable.icon_acount_table4,
+				width);
 		Button safetyZone = (Button) view
 				.findViewById(R.id.fragment_account_safety_zone);
 		setDrawableTop(safetyZone, R.drawable.account_icon_safety_zone, width);
 		Button guys = (Button) view
-				.findViewById(R.id.fragment_account_guys_main);
+				.findViewById(R.id.fragment_account_oil_electricity_info);
 		setDrawableTop(guys, R.drawable.icon_acount_table2, width);
 		Button familyBt = (Button) view
 				.findViewById(R.id.fragment_account_fimily_members);
@@ -131,7 +134,7 @@ public class FragmentAccount extends Fragment implements OnClickListener {
 		safetyZone.setOnClickListener(this);
 		setTimeZone.setOnClickListener(this);
 		setAPN.setOnClickListener(this);
-		findWatch.setOnClickListener(this);
+		disarmFortificationBt.setOnClickListener(this);
 		checkPhone.setOnClickListener(this);
 		familyBt.setOnClickListener(this);
 		guys.setOnClickListener(this);
@@ -158,10 +161,11 @@ public class FragmentAccount extends Fragment implements OnClickListener {
 						ActivityFamilyMembers.class));
 			}
 			break;
-		case R.id.fragment_account_guys_main:
-			if (!app.imeiIsEmpty(getActivity(), true)) {
-				startActivity(new Intent(getActivity(), ActivityElectricityAndOilManage.class));
-			}
+		case R.id.fragment_account_oil_electricity_info:
+			// if (!app.imeiIsEmpty(getActivity(), true)) {
+			startActivity(new Intent(getActivity(),
+					ActivityElectricityAndOilManage.class));
+			// }
 			break;
 		case R.id.fragment_account_safety_zone:
 			if (!app.imeiIsEmpty(getActivity(), true)) {
@@ -180,10 +184,12 @@ public class FragmentAccount extends Fragment implements OnClickListener {
 				showShutDownAction();
 			}
 			break;
-		case R.id.fragment_account_find_watch:
+		case R.id.fragment_account_disarm_fortification_bt:
+			// if (!app.imeiIsEmpty(getActivity(), true)) {
+			startActivity(new Intent(getActivity(),
+					ActivityDisarmFortification.class));
+			// }
 			break;
-	
-	
 
 		case R.id.fragment_account_system_set:
 			startActivity(new Intent(getActivity(), ActivitySystemSet.class));
@@ -218,7 +224,6 @@ public class FragmentAccount extends Fragment implements OnClickListener {
 		dialog.setCancelable(false);
 		dialog.show();
 	}
-
 
 	private void dismissDialog() {
 		if (dialog != null && dialog.isShowing()) {
@@ -313,7 +318,7 @@ public class FragmentAccount extends Fragment implements OnClickListener {
 	}
 
 	@Override
-	public void onResume() { 
+	public void onResume() {
 		initView();
 		super.onResume();
 	}

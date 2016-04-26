@@ -66,7 +66,7 @@ public class CircleImageView extends ImageView {
 		super.setScaleType(SCALE_TYPE);
 
 		TypedArray a = context.obtainStyledAttributes(attrs,
-				R.styleable.CircleImageView, defStyle, 0); 
+				R.styleable.CircleImageView, defStyle, 0);
 
 		mBorderWidth = a.getDimensionPixelSize(
 				R.styleable.CircleImageView_border_width, DEFAULT_BORDER_WIDTH);

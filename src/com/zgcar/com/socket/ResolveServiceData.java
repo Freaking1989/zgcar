@@ -705,7 +705,7 @@ public class ResolveServiceData {
 	 * @return
 	 */
 	public static synchronized String getJson(String cmd, String imei,
-			String number, String map_type) {
+			String number, int map_type) {
 		try {
 			JSONObject object = new JSONObject();
 			object.put("cmd", cmd);
