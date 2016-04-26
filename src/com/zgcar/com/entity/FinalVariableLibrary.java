@@ -99,9 +99,9 @@ public class FinalVariableLibrary {
 	 */
 	public static final String SET_REGISTER_PSW_CMD = "00001";
 	/**
-	 * 用户输入密码登陆80002
+	 * 用户输入密码登陆
 	 */
-	public static final String INPUT_PASSWOR_AND_LOADING = "00002";
+	public static final String INPUT_PASSWOR_AND_LOADING = "80002";
 
 	/**
 	 * 添加新考拉
@@ -263,6 +263,7 @@ public class FinalVariableLibrary {
 	/**
 	 * 获取小伙伴列表
 	 */
+	
 	public static final String GUYS_INFOS_CMD = "00062";
 	/**
 	 * 删除小伙伴
@@ -362,9 +363,9 @@ public class FinalVariableLibrary {
 	public static final String GET_CODE_STATE_CMD = "20003";
 
 	/**
-	 * .获取终端列表30011
+	 * .获取终端列表
 	 */
-	public static final String GET_WATCH_LIST_CMD = "30001";
+	public static final String GET_WATCH_LIST_CMD = "30011";
 	/**
 	 * 编辑终端
 	 */

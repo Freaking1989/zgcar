@@ -91,10 +91,8 @@ public class ActivityDisarmFortification extends Activity implements
 				} else {
 					Looper.prepare();
 					dialog.dismiss();
-					Util.showToastBottom(
-							ActivityDisarmFortification.this,
-							SocketUtil
-									.isFail(ActivityDisarmFortification.this));
+					Util.showToastBottom(ActivityDisarmFortification.this,
+							SocketUtil.isFail(ActivityDisarmFortification.this));
 					Looper.loop();
 					return;
 				}
@@ -112,6 +110,7 @@ public class ActivityDisarmFortification extends Activity implements
 	/**
 	 * 
 	 */
+	@SuppressWarnings("unused")
 	private void showInputPswDialog() {
 		dialog = getDialog();
 		View view = View.inflate(ActivityDisarmFortification.this,
@@ -152,8 +151,7 @@ public class ActivityDisarmFortification extends Activity implements
 			getInfosRequest();
 			dialogDismiss();
 		} else {
-			Util.showToastCenter(ActivityDisarmFortification.this,
-					"请输入正确帐户密码.");
+			Util.showToastCenter(ActivityDisarmFortification.this, "请输入正确帐户密码.");
 		}
 
 	}
@@ -166,8 +164,8 @@ public class ActivityDisarmFortification extends Activity implements
 	}
 
 	public Dialog getDialog() {
-		return dialog == null ? new Dialog(
-				ActivityDisarmFortification.this, R.style.dialog) : dialog;
+		return dialog == null ? new Dialog(ActivityDisarmFortification.this,
+				R.style.dialog) : dialog;
 	}
 
 	private void dialogDismiss() {

@@ -29,7 +29,6 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.amap.api.services.core.AMapException;
 import com.amap.api.services.core.PoiItem;
 import com.amap.api.services.help.Inputtips;
 import com.amap.api.services.help.Inputtips.InputtipsListener;
@@ -112,10 +111,11 @@ public class ActivitySafetySearch1 extends Activity implements TextWatcher,
 		adapter = new BaseAdapter() {
 			@Override
 			public View getView(int arg0, View view, ViewGroup arg2) {
-
-				view = LayoutInflater.from(ActivitySafetySearch1.this).inflate(
-						R.layout.adapter_history_search_textview, arg2, false);
-
+				if (view == null) {
+					view = LayoutInflater.from(ActivitySafetySearch1.this)
+							.inflate(R.layout.adapter_history_search_textview,
+									arg2, false);
+				}
 				TextView tv = (TextView) view
 						.findViewById(R.id.adapter_history_textview);
 				tv.setText(poiItems.get(arg0).getTitle());
@@ -247,7 +247,8 @@ public class ActivitySafetySearch1 extends Activity implements TextWatcher,
 				new InputtipsListener() {
 					@Override
 					public void onGetInputtips(List<Tip> tipList, int rCode) {
-						Log.e("ActivitySafetySearch1", "InputtipsListener:"+rCode);
+						Log.e("ActivitySafetySearch1", "InputtipsListener:"
+								+ rCode);
 						if (rCode == 1000) {// 正确返回
 							List<String> listString = new ArrayList<String>();
 							for (int i = 0; i < tipList.size(); i++) {
@@ -262,14 +263,9 @@ public class ActivitySafetySearch1 extends Activity implements TextWatcher,
 						}
 					}
 				});
-		 try {
-			 //InputtipsQuery query = new InputtipsQuery(newText, "");
-			 //	inputTips.setQuery(query);
-		 inputTips.requestInputtips(newText, "");//
-		// 第一个参数表示提示关键字，第二个参数默认代表全国，也可以为城市区号
-		 } catch (AMapException e) {
-		 e.printStackTrace();
-		 }
+		InputtipsQuery query = new InputtipsQuery(newText, "");// 第一个参数表示提示关键字，第二个参数默认代表全国，也可以为城市区号
+		inputTips.setQuery(query);
+		inputTips.requestInputtipsAsyn();
 	}
 
 	/**
@@ -337,7 +333,6 @@ public class ActivitySafetySearch1 extends Activity implements TextWatcher,
 
 	@Override
 	public void onPoiItemSearched(PoiItem arg0, int arg1) {
-		
 
 	}
 }
