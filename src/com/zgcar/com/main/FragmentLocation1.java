@@ -10,7 +10,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -36,10 +36,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.amap.api.location.AMapLocation;
-import com.amap.api.location.AMapLocationClient;
-import com.amap.api.location.AMapLocationClientOption;
-import com.amap.api.location.AMapLocationClientOption.AMapLocationMode;
-import com.amap.api.location.AMapLocationListener;
 import com.amap.api.maps.AMap;
 import com.amap.api.maps.AMap.InfoWindowAdapter;
 import com.amap.api.maps.CameraUpdateFactory;
@@ -234,7 +230,6 @@ public class FragmentLocation1 extends Fragment implements OnClickListener,
 		initPopupWindow();
 	}
 
-	@SuppressWarnings("deprecation")
 	private void initPopupWindow() {
 		isLocationFinish = false;
 		list = new ArrayList<TerminalListInfos>();
@@ -281,7 +276,7 @@ public class FragmentLocation1 extends Fragment implements OnClickListener,
 		popWindow = new PopupWindow(layout,
 				FinalVariableLibrary.ScreenWidth * 4 / 9,
 				LayoutParams.WRAP_CONTENT, true);
-		popWindow.setBackgroundDrawable(new BitmapDrawable());
+		popWindow.setBackgroundDrawable(new ColorDrawable());
 		popWindow.setOnDismissListener(new OnDismissListener() {
 			@Override
 			public void onDismiss() {
