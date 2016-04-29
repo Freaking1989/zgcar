@@ -281,6 +281,7 @@ public class ActivityShowHistoryInfo2 extends Activity implements
 	public void getDataHositoryInfos(String date) {
 		this.date = date;
 		titleDate.setText(date);
+		webView.loadUrl("javascript:ClearAll();");
 		showProgressDialog();
 		historyRequest();
 	}

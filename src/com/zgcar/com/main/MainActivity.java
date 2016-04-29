@@ -12,7 +12,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -25,10 +24,11 @@ import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import cn.jpush.android.api.JPushInterface;
 
+import com.amap.api.location.AMapLocation;
 import com.zgcar.com.R;
 import com.zgcar.com.entity.FinalVariableLibrary;
+import com.zgcar.com.main.PhoneLocation.CallBack;
 import com.zgcar.com.receiver.MyPushService;
 import com.zgcar.com.util.Quit;
 import com.zgcar.com.util.SetTitleBackground;
@@ -55,6 +55,13 @@ public class MainActivity extends Activity implements OnClickListener,
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		initialize();
+		new PhoneLocation().getPhoneLocation(MainActivity.this, new CallBack() {
+			@Override
+			public void callBack(AMapLocation arg0) {
+				app.setTempMyLocation(arg0);
+			}
+		});
+
 		IntentFilter filter = new IntentFilter(
 				FinalVariableLibrary.VoiceNotifyMessageAction);
 		registerReceiver(receiver, filter);
@@ -62,7 +69,6 @@ public class MainActivity extends Activity implements OnClickListener,
 		 * 时时定位改成点击定位 startService(new Intent(MainActivity.this,
 		 * ServiceStartLocation.class));
 		 * */
-
 	}
 
 	@Override

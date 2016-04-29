@@ -152,6 +152,9 @@ public class SocketUtil {
 		}
 	}
 
+	/**
+	 * @return  服务器JSONObject对象数据
+	 */
 	public static JSONObject getData() {
 		JSONObject data2 = data;
 		data = null;

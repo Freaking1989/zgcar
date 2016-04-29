@@ -200,7 +200,6 @@ public class ActivityShowHistoryInfo1 extends Activity implements
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.button2:// 返回历史轨迹
-			
 			aMap.clear();
 			if (polyline != null) {
 				polyline.setPoints(new ArrayList<LatLng>());
@@ -330,19 +329,22 @@ public class ActivityShowHistoryInfo1 extends Activity implements
 			public void run() {
 				synchronized (this) {
 					try {
-						if (mMoveMarker == null) {
-							MarkerOptions markerOptions = new MarkerOptions();
-							markerOptions.setFlat(true);
-							markerOptions.anchor(0.5f, 0.5f);
-							markerOptions.icon(BitmapDescriptorFactory
-									.fromResource(R.drawable.marker));
-							markerOptions
-									.position(moveMarkerPosition == null ? polyline
-											.getPoints().get(0)
-											: moveMarkerPosition);
-							mMoveMarker = aMap.addMarker(markerOptions);
-							mMoveMarker.setRotateAngle((float) getAngle(0));
+						if (mMoveMarker != null) {
+							mMoveMarker.remove();
+							mMoveMarker.destroy();
+							mMoveMarker = null;
 						}
+						MarkerOptions markerOptions = new MarkerOptions();
+						markerOptions.setFlat(true);
+						markerOptions.anchor(0.5f, 0.5f);
+						markerOptions.icon(BitmapDescriptorFactory
+								.fromResource(R.drawable.marker));
+						markerOptions
+								.position(moveMarkerPosition == null ? polyline
+										.getPoints().get(0)
+										: moveMarkerPosition);
+						mMoveMarker = aMap.addMarker(markerOptions);
+						mMoveMarker.setRotateAngle((float) getAngle(0));
 						aMap.moveCamera(CameraUpdateFactory.zoomTo(15));
 						for (int i = tempPosition; i < polyline.getPoints()
 								.size() - 1; i++) {
@@ -367,10 +369,12 @@ public class ActivityShowHistoryInfo1 extends Activity implements
 								boolean isReverse = (startPoint.longitude > endPoint.longitude);
 								double xMoveDistance = isReverse ? getXMoveDistance(slope)
 										: -1 * getXMoveDistance(slope);
-
+								int m = 0;
 								for (double j = startPoint.longitude; Math
 										.abs(j - endPoint.longitude) < 0.000001; j = j
 										- xMoveDistance) {
+									m++;
+									m = m % 50;
 									LatLng latLng = new LatLng(
 											startPoint.latitude, j);
 									if (moveMarkerPosition != null) {
@@ -381,6 +385,10 @@ public class ActivityShowHistoryInfo1 extends Activity implements
 										}
 									}
 									mMoveMarker.setPosition(latLng);
+									if (m == 0) {
+										aMap.moveCamera(CameraUpdateFactory
+												.changeLatLng(latLng));
+									}
 									if (!isPlayer) {
 										moveMarkerPosition = latLng;
 										break;
@@ -400,8 +408,12 @@ public class ActivityShowHistoryInfo1 extends Activity implements
 										startPoint);
 								double xMoveDistance = isReverse ? getXMoveDistance(slope)
 										: -1 * getXMoveDistance(slope);
+
+								int m = 0;
 								for (double j = startPoint.latitude; !((j > endPoint.latitude) ^ isReverse); j = j
 										- xMoveDistance) {
+									m++;
+									m = m % 50;
 									LatLng latLng = null;
 									if (slope != Double.MAX_VALUE) {
 										latLng = new LatLng(j, (j - intercept)
@@ -420,6 +432,10 @@ public class ActivityShowHistoryInfo1 extends Activity implements
 										}
 									}
 									mMoveMarker.setPosition(latLng);
+									if (m == 0) {
+										aMap.moveCamera(CameraUpdateFactory
+												.changeLatLng(latLng));
+									}
 									if (!isPlayer) {
 										moveMarkerPosition = latLng;
 										break;
@@ -621,7 +637,7 @@ public class ActivityShowHistoryInfo1 extends Activity implements
 	@Override
 	public void getDataHositoryInfos(String date) {
 		isAll.setText("过滤模糊:关");
-		filterIsOpen=false;
+		filterIsOpen = false;
 		showProgressDialog();
 		clearPlayerData();
 		this.date = date;
